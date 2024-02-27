@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://da21g7ufq2k1n"]
+
+[ext_resource type="Script" path="res://pixeller.gd" id="1_gqb6u"]
+
+[node name="pixeller" type="Node2D"]
+script = ExtResource("1_gqb6u")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ifcwoqitdrfq"]
+
+[ext_resource type="Texture2D" uid="uid://enohvkaq7lav" path="res://sprites/black_character.png" id="1_7k157"]
+[ext_resource type="Script" path="res://black_character.gd" id="1_frj16"]
+[ext_resource type="Texture2D" uid="uid://bycbehdgiewfb" path="res://sprites/black_gun.png" id="3_v2tkx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjqet"]
+radius = 25.0
+height = 96.0
+
+[node name="BlackCharacter" type="CharacterBody2D"]
+process_mode = 4
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_frj16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
+texture = ExtResource("1_7k157")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+shape = SubResource("CapsuleShape2D_hjqet")
+
+[node name="gun" type="Sprite2D" parent="."]
+position = Vector2(0, -41)
+texture = ExtResource("3_v2tkx")
+offset = Vector2(30, 0)
+
+[node name="bullet spawn" type="Node2D" parent="gun"]
+position = Vector2(55, 0)

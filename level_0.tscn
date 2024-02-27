@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjcttugw0uh2p"]
+
+[ext_resource type="PackedScene" uid="uid://da21g7ufq2k1n" path="res://pixeller.tscn" id="1_gfatq"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="1_khf3c"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="2_dxi7f"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="2_ulvfy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umgoa"]
+radius = 156.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yroj7"]
+size = Vector2(432, 343)
+
+[node name="Level 0" type="Node2D"]
+
+[node name="pixeller" parent="." instance=ExtResource("1_gfatq")]
+
+[node name="whiteCharacter" parent="." instance=ExtResource("1_khf3c")]
+position = Vector2(391, 228)
+
+[node name="BlackCharacter" parent="." instance=ExtResource("2_ulvfy")]
+position = Vector2(714, 113)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("2_dxi7f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="black_start"]
+position = Vector2(838, 259)
+shape = SubResource("CircleShape2D_umgoa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="black_start"]
+position = Vector2(639, 396)
+shape = SubResource("CircleShape2D_umgoa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
+position = Vector2(372, 234)
+shape = SubResource("RectangleShape2D_yroj7")

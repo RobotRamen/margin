@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://btmbe16yn7fae"]
+
+[node name="whiteExit" type="Area2D"]

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://drtn8scom3w20"]
+
+[node name="blackExit" type="Area2D"]
