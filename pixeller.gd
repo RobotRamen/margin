@@ -19,5 +19,3 @@ func _ready():
 						side_sprite.scale *= randf_range(0.4, 1.3)
 				new_pixel.rotate(deg_to_rad(randf_range(0., 360.)))
 				new_pixel.set_meta("colour", 1)
-	white_character.process_mode = Node.PROCESS_MODE_INHERIT
-	black_character.process_mode = Node.PROCESS_MODE_INHERIT

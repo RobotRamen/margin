@@ -9,7 +9,6 @@ radius = 25.0
 height = 96.0
 
 [node name="whiteCharacter" type="CharacterBody2D"]
-process_mode = 4
 collision_layer = 8
 script = ExtResource("1_1vbqw")
 

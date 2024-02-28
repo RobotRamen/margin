@@ -1,5 +1,6 @@
 extends Area2D
 
+signal cleared
 
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
@@ -10,4 +11,5 @@ func _process(_delta):
 		pix.set_collision_layer_value(2, true)
 		pix.set_meta("colour", 2)
 	if(!overlapping_pix.is_empty()):
+		cleared.emit()
 		queue_free()

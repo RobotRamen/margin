@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjcttugw0uh2p"]
+[gd_scene load_steps=8 format=3 uid="uid://cjcttugw0uh2p"]
 
 [ext_resource type="PackedScene" uid="uid://da21g7ufq2k1n" path="res://pixeller.tscn" id="1_gfatq"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="1_khf3c"]
 [ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="2_dxi7f"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="2_ulvfy"]
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="2_y3qo1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umgoa"]
 radius = 156.0
@@ -15,11 +16,13 @@ size = Vector2(432, 343)
 
 [node name="pixeller" parent="." instance=ExtResource("1_gfatq")]
 
-[node name="whiteCharacter" parent="." instance=ExtResource("1_khf3c")]
-position = Vector2(391, 228)
+[node name="whiteSpawner" parent="." instance=ExtResource("2_y3qo1")]
+position = Vector2(449, 316)
+scene = ExtResource("1_khf3c")
 
-[node name="blackCharacter" parent="." instance=ExtResource("2_ulvfy")]
-position = Vector2(714, 113)
+[node name="blackSpawner" parent="." instance=ExtResource("2_y3qo1")]
+position = Vector2(662, 73)
+scene = ExtResource("2_ulvfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
