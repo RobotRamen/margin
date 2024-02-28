@@ -21,7 +21,7 @@ position = Vector2(449, 316)
 scene = ExtResource("1_khf3c")
 
 [node name="blackSpawner" parent="." instance=ExtResource("2_y3qo1")]
-position = Vector2(662, 73)
+position = Vector2(656, 77)
 scene = ExtResource("2_ulvfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -38,5 +38,5 @@ position = Vector2(639, 396)
 shape = SubResource("CircleShape2D_umgoa")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
-position = Vector2(372, 234)
+position = Vector2(362, 247)
 shape = SubResource("RectangleShape2D_yroj7")
