@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pixel = preload("res://pixel.tscn")
 @onready var white_character = $"../whiteCharacter"
-@onready var black_character = $"../BlackCharacter"
+@onready var black_character = $"../blackCharacter"
 
 var pixel_density = 6
 
@@ -18,5 +18,6 @@ func _ready():
 						side_sprite.position += Vector2(randf_range(-30., +30.),randf_range(-30., +30.))
 						side_sprite.scale *= randf_range(0.4, 1.3)
 				new_pixel.rotate(deg_to_rad(randf_range(0., 360.)))
+				new_pixel.set_meta("colour", 1)
 	white_character.process_mode = Node.PROCESS_MODE_INHERIT
 	black_character.process_mode = Node.PROCESS_MODE_INHERIT

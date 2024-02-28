@@ -8,9 +8,9 @@
 radius = 25.0
 height = 96.0
 
-[node name="BlackCharacter" type="CharacterBody2D"]
+[node name="blackCharacter" type="CharacterBody2D"]
 process_mode = 4
-collision_layer = 2
+collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_frj16")
 

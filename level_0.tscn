@@ -18,7 +18,7 @@ size = Vector2(432, 343)
 [node name="whiteCharacter" parent="." instance=ExtResource("1_khf3c")]
 position = Vector2(391, 228)
 
-[node name="BlackCharacter" parent="." instance=ExtResource("2_ulvfy")]
+[node name="blackCharacter" parent="." instance=ExtResource("2_ulvfy")]
 position = Vector2(714, 113)
 
 [node name="Camera2D" type="Camera2D" parent="."]

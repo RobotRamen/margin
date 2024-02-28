@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var white_character = $"../whiteCharacter"
+
 func _ready():
 	$CollisionShape2D.shape.radius = 1.0
 	var tween = get_tree().create_tween()
@@ -12,4 +14,5 @@ func _process(delta):
 		pix.visible = true
 		pix.set_collision_layer_value(1, true)
 		pix.set_collision_layer_value(2, false)
+		white_character.add_whitened_pixel(pix)
 

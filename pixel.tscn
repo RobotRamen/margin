@@ -14,22 +14,18 @@ position = Vector2(3, 6)
 scale = Vector2(0.3125, 0.3125)
 
 [node name="side_sprite" type="Sprite2D" parent="side_sprites"]
-scale = Vector2(1, 1)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite2" type="Sprite2D" parent="side_sprites"]
 position = Vector2(-38.4, -32)
-scale = Vector2(1, 1)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite3" type="Sprite2D" parent="side_sprites"]
 position = Vector2(-35.2, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite4" type="Sprite2D" parent="side_sprites"]
 position = Vector2(12.8, -41.6)
-scale = Vector2(1, 1)
 texture = ExtResource("1_pniq6")
 
 [node name="main_sprite" type="Sprite2D" parent="."]

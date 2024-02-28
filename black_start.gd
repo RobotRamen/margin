@@ -8,5 +8,6 @@ func _process(_delta):
 		pix.visible = false
 		pix.set_collision_layer_value(1, false)
 		pix.set_collision_layer_value(2, true)
+		pix.set_meta("colour", 2)
 	if(!overlapping_pix.is_empty()):
 		queue_free()

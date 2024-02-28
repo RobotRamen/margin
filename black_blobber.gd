@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var black_character = $"../blackCharacter"
 
 func _ready():
 	$CollisionShape2D.shape.radius = 1.0
@@ -13,3 +14,4 @@ func _process(delta):
 		pix.visible = false
 		pix.set_collision_layer_value(2, true)
 		pix.set_collision_layer_value(1, false)
+		black_character.add_blackened_pixel(pix)
