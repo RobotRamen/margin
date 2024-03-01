@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var pixel = preload("res://pixel.tscn")
-@onready var white_character = $"../whiteCharacter"
-@onready var black_character = $"../blackCharacter"
 
 var pixel_density = 6
 

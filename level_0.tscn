@@ -28,6 +28,7 @@ scene = ExtResource("2_ulvfy")
 anchor_mode = 0
 
 [node name="black_start" parent="." instance=ExtResource("2_dxi7f")]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="black_start"]
 position = Vector2(838, 259)
