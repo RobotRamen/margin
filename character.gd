@@ -98,7 +98,7 @@ func _input(event):
 
 func fire(mouse_position):
 	if scale - (size_increment/2)  <= min_size:
-		scale = max_size
+		scale = min_size
 	else:
 		scale = (scale-size_increment).clamp(min_size, max_size)
 		var new_bullet : RigidBody2D = bullet_scene.instantiate()
@@ -116,7 +116,8 @@ func restore():
 		for pix in restore_pixels:
 			if pix.get_meta("colour", 0) == 2:
 				restores += 1
-				pix.visible = false
+				pix.get_node("main_sprite").visible = false
+				pix.get_node("side_sprites").modulate = Color(0,0,0,1)
 				pix.set_collision_layer_value(2, true)
 				pix.set_collision_layer_value(1, false)
 				var new_restore = restore_scene.instantiate()
@@ -129,7 +130,8 @@ func restore():
 		for pix in restore_pixels:
 			if pix.get_meta("colour", 0) == 1:
 				restores += 1
-				pix.visible = true
+				pix.get_node("main_sprite").visible = true
+				pix.get_node("side_sprites").modulate = Color(1,1,1,1)
 				pix.set_collision_layer_value(1, true)
 				pix.set_collision_layer_value(2, false)
 				var new_restore = restore_scene.instantiate()

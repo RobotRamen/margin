@@ -11,7 +11,8 @@ func _ready():
 func _process(delta):
 	var overlapping_pix = get_overlapping_bodies()
 	for pix in overlapping_pix:
-		pix.visible = false
+		#pix.get_node("main_sprite").visible = false
+		pix.get_node("side_sprites").modulate = Color(0,0,0,1)
 		pix.set_collision_layer_value(2, true)
 		pix.set_collision_layer_value(1, false)
 		black_character.add_pixel(pix)

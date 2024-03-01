@@ -13,22 +13,25 @@ collision_mask = 0
 position = Vector2(3, 6)
 scale = Vector2(0.3125, 0.3125)
 
-[node name="side_sprite" type="Sprite2D" parent="side_sprites"]
-texture = ExtResource("1_pniq6")
-
 [node name="side_sprite2" type="Sprite2D" parent="side_sprites"]
-position = Vector2(-38.4, -32)
+position = Vector2(-35.2, -32)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite3" type="Sprite2D" parent="side_sprites"]
-position = Vector2(-35.2, 0)
+position = Vector2(-25.6, 3.2)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite4" type="Sprite2D" parent="side_sprites"]
-position = Vector2(12.8, -41.6)
+position = Vector2(9.6, -41.6)
+texture = ExtResource("1_pniq6")
+
+[node name="side_sprite5" type="Sprite2D" parent="side_sprites"]
+position = Vector2(12.8, -3.2)
+scale = Vector2(1, 1)
 texture = ExtResource("1_pniq6")
 
 [node name="main_sprite" type="Sprite2D" parent="."]
+z_index = -2
 texture = ExtResource("1_pniq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

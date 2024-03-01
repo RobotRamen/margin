@@ -6,7 +6,8 @@ signal cleared
 func _process(_delta):
 	var overlapping_pix = get_overlapping_bodies()
 	for pix in overlapping_pix:
-		pix.visible = false
+		pix.get_node("main_sprite").visible = false
+		pix.get_node("side_sprites").modulate = Color(0,0,0,1)
 		pix.set_collision_layer_value(1, false)
 		pix.set_collision_layer_value(2, true)
 		pix.set_meta("colour", 2)
