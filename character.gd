@@ -15,6 +15,7 @@ var switch_b = "switch"
 var bullet_impulse = 2000
 
 var direction
+var look_direction
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -30,7 +31,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var restore_pixels = []
 var size_restore_step =  Vector2(0.01,0.01)
-
 
 var min_size = Vector2(0.4,0.4)
 var max_size =  Vector2(1.,1.)
@@ -73,7 +73,20 @@ func _physics_process(delta):
 		direction = 0
 		
 	velocity.x = direction * SPEED
-
+	
+	if controlled_by_0:
+		look_direction = Input.get_vector("look_left_0", "look_right_0", "look_up_0", "look_down_0")
+	elif controlled_by_1:
+		look_direction = Input.get_vector("look_left_1", "look_right_1", "look_up_1", "look_down_1")
+	else:
+		look_direction = Vector2(0,0)
+	
+	if look_direction.length() >= 0.1:
+		gun.look_at(gun.global_position + look_direction)
+	
+	if Input.is_action_just_pressed(shoot_b):
+		fire(gun.global_position + 600 * Vector2.from_angle(gun.rotation))
+	
 	move_and_slide()
 	
 func _input(event):
@@ -99,27 +112,30 @@ func add_pixel(pixel):
 		
 func restore():
 	var restores = 0
-	for pix in restore_pixels:
-		
-		if colour == 1 and pix.get_meta("colour", 0) == 2:
-			restores += 1
-			pix.visible = false
-			pix.set_collision_layer_value(2, true)
-			pix.set_collision_layer_value(1, false)
-			var new_restore = restore_scene.instantiate()
-			add_sibling(new_restore)
-			new_restore.position = pix.position
-			new_restore.scale *= randf_range(0.2, 1.)
-		
-		elif colour == 2 and pix.get_meta("colour", 0) == 1:
-			restores += 1
-			pix.visible = true
-			pix.set_collision_layer_value(1, true)
-			pix.set_collision_layer_value(2, false)
-			var new_restore = restore_scene.instantiate()
-			add_sibling(new_restore)
-			new_restore.position = pix.position
-			new_restore.scale *= randf_range(0.2, 1.)
+	if colour == 1:
+		for pix in restore_pixels:
+			if pix.get_meta("colour", 0) == 2:
+				restores += 1
+				pix.visible = false
+				pix.set_collision_layer_value(2, true)
+				pix.set_collision_layer_value(1, false)
+				var new_restore = restore_scene.instantiate()
+				add_sibling(new_restore)
+				new_restore.position = pix.position
+				new_restore.scale *= randf_range(0.2, 1.)
+				
+				
+	elif colour == 2:
+		for pix in restore_pixels:
+			if pix.get_meta("colour", 0) == 1:
+				restores += 1
+				pix.visible = true
+				pix.set_collision_layer_value(1, true)
+				pix.set_collision_layer_value(2, false)
+				var new_restore = restore_scene.instantiate()
+				add_sibling(new_restore)
+				new_restore.position = pix.position
+				new_restore.scale *= randf_range(0.2, 1.)
 		
 	if(restores):
 		size_restore_step = (max_size - scale)/restores
@@ -146,4 +162,3 @@ func switch():
 		jump_b = "jump_1"
 		shoot_b = "shoot_1"
 		restore_b = "restore_1"
-		
