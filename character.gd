@@ -93,7 +93,7 @@ func fire(mouse_position):
 		new_bullet.position = bullet_spawn.global_position
 		new_bullet.apply_central_impulse((mouse_position - new_bullet.position).normalized() * bullet_impulse)
 
-func add_whitened_pixel(pixel):
+func add_pixel(pixel):
 	if pixel not in restore_pixels:
 		restore_pixels.append(pixel)
 		

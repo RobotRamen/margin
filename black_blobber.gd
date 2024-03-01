@@ -14,4 +14,4 @@ func _process(delta):
 		pix.visible = false
 		pix.set_collision_layer_value(2, true)
 		pix.set_collision_layer_value(1, false)
-		black_character.add_blackened_pixel(pix)
+		black_character.add_pixel(pix)
