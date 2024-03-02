@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjcttugw0uh2p"]
+[gd_scene load_steps=10 format=3 uid="uid://cjcttugw0uh2p"]
 
 [ext_resource type="PackedScene" uid="uid://da21g7ufq2k1n" path="res://pixeller.tscn" id="1_gfatq"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="1_khf3c"]
@@ -7,10 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="2_y3qo1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umgoa"]
-radius = 156.0
+radius = 290.016
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yroj7"]
-size = Vector2(432, 343)
+size = Vector2(593.5, 642.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipig1"]
+size = Vector2(55, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reg7u"]
+size = Vector2(1920, 55)
 
 [node name="Level 0" type="Node2D"]
 
@@ -21,7 +27,7 @@ position = Vector2(449, 316)
 scene = ExtResource("1_khf3c")
 
 [node name="blackSpawner" parent="." instance=ExtResource("2_y3qo1")]
-position = Vector2(656, 77)
+position = Vector2(638, 200)
 scene = ExtResource("2_ulvfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -31,13 +37,76 @@ anchor_mode = 0
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="black_start"]
-position = Vector2(838, 259)
+position = Vector2(1406, 477)
 shape = SubResource("CircleShape2D_umgoa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="black_start"]
-position = Vector2(639, 396)
+position = Vector2(931, 618)
 shape = SubResource("CircleShape2D_umgoa")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
-position = Vector2(362, 247)
+position = Vector2(434.25, 571.125)
 shape = SubResource("RectangleShape2D_yroj7")
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="wall3" type="StaticBody2D" parent="walls"]
+z_index = 3
+collision_layer = 3
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="walls/wall3"]
+offset_right = 55.0
+offset_bottom = 1080.0
+color = Color(0.5, 0.5, 0.5, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall3"]
+position = Vector2(27, 540)
+shape = SubResource("RectangleShape2D_ipig1")
+
+[node name="wall2" type="StaticBody2D" parent="walls"]
+z_index = 3
+position = Vector2(0, 1025)
+collision_layer = 3
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="walls/wall2"]
+offset_right = 1920.0
+offset_bottom = 55.0
+color = Color(0.5, 0.5, 0.5, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall2"]
+position = Vector2(960, 27)
+shape = SubResource("RectangleShape2D_reg7u")
+
+[node name="wall" type="StaticBody2D" parent="walls"]
+z_index = 3
+collision_layer = 3
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="walls/wall"]
+offset_right = 1920.0
+offset_bottom = 55.0
+color = Color(0.5, 0.5, 0.5, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall"]
+position = Vector2(960, 27)
+shape = SubResource("RectangleShape2D_reg7u")
+
+[node name="wall4" type="StaticBody2D" parent="walls"]
+z_index = 3
+position = Vector2(1865, 0)
+collision_layer = 3
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="walls/wall4"]
+offset_right = 55.0
+offset_bottom = 1080.0
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall4"]
+position = Vector2(27, 540)
+shape = SubResource("RectangleShape2D_ipig1")

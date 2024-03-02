@@ -14,7 +14,7 @@ func _ready():
 				new_pixel.position = Vector2(i*pixel_density+pixel_density/2.0 + 50,j*pixel_density+pixel_density/2.0 + 50)
 				for side_sprite : CanvasItem in new_pixel.get_node("side_sprites").get_children():
 						side_sprite.position += Vector2(randf_range(-10., +10.),randf_range(-10., +10.))
-						side_sprite.scale *= randf_range(0.4, 1.8)
+						side_sprite.scale *= randf_range(.5, 3.5)
 						side_sprite.z_index = randi_range(-1,1)
 				new_pixel.rotate(deg_to_rad(randf_range(0., 360.)))
 				new_pixel.set_meta("colour", 1)
