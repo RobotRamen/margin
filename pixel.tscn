@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csxeedq75ib36" path="res://sprites/white_circle.png" id="1_pniq6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkaoa"]
-radius = 6.0
+radius = 9.0
 
 [node name="pixel" type="StaticBody2D"]
 collision_layer = 5
@@ -14,24 +14,24 @@ position = Vector2(3, 6)
 scale = Vector2(0.3125, 0.3125)
 
 [node name="side_sprite2" type="Sprite2D" parent="side_sprites"]
-position = Vector2(-35.2, -32)
+position = Vector2(-44.8, -38.4)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite3" type="Sprite2D" parent="side_sprites"]
-position = Vector2(-25.6, 3.2)
+position = Vector2(-38.4, 9.6)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite4" type="Sprite2D" parent="side_sprites"]
-position = Vector2(9.6, -41.6)
+position = Vector2(19.2, -51.2)
 texture = ExtResource("1_pniq6")
 
 [node name="side_sprite5" type="Sprite2D" parent="side_sprites"]
-position = Vector2(12.8, -3.2)
-scale = Vector2(1, 1)
+position = Vector2(22.4, 6.4)
 texture = ExtResource("1_pniq6")
 
 [node name="main_sprite" type="Sprite2D" parent="."]
 z_index = -2
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_pniq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
