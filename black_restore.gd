@@ -9,7 +9,7 @@ func _ready():
 	direction = initial_direction
 
 func _physics_process(delta):
-	var direction_to_character : Vector2 = (black_character.position + Vector2(0,-50)) - position
+	var direction_to_character : Vector2 = (black_character.position + Vector2(0,-50)*black_character.scale.x) - position
 	direction_to_character = direction_to_character.normalized()
 	direction = ((direction_to_character + direction*3)/4).normalized()
 	speed = (speed*4 + final_speed)/5
