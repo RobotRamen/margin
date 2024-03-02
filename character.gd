@@ -143,6 +143,7 @@ func restore():
 		size_restore_step = (max_size - scale)/restores
 	else:
 		size_restore_step = max_size - scale
+		scale = max_size
 	restore_pixels = []
 
 func on_restore_pickup():
