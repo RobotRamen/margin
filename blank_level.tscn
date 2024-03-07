@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://o5hjuusa82ls"]
+
+[ext_resource type="PackedScene" uid="uid://da21g7ufq2k1n" path="res://pixeller.tscn" id="1_xaeup"]
+[ext_resource type="PackedScene" uid="uid://d0kpigw6131qy" path="res://walls.tscn" id="2_w7ujf"]
+
+[node name="BlankLevel" type="Node2D"]
+
+[node name="pixeller" parent="." instance=ExtResource("1_xaeup")]
+
+[node name="walls" parent="." instance=ExtResource("2_w7ujf")]

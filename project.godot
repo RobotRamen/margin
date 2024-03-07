@@ -15,6 +15,10 @@ run/main_scene="res://level_0.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BlankLevel="*res://blank_level.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -152,6 +156,7 @@ switch={
 2d_physics/layer_3="all pixels"
 2d_physics/layer_4="white character"
 2d_physics/layer_5="black character"
+2d_physics/layer_6="wall"
 
 [rendering]
 
