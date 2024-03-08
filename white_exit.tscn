@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://btmbe16yn7fae"]
+[gd_scene load_steps=3 format=3 uid="uid://btmbe16yn7fae"]
 
-[node name="whiteExit" type="Area2D"]
+[ext_resource type="Texture2D" uid="uid://c8ea7q0e2nokf" path="res://sprites/white_character.png" id="1_nr5pu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl8to"]
+size = Vector2(54, 98)
+
+[node name="White Exit" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_nr5pu")
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_yl8to")

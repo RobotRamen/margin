@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjcttugw0uh2p"]
+[gd_scene load_steps=9 format=3 uid="uid://cjcttugw0uh2p"]
 
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="1_khf3c"]
+[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="1_ovsch"]
 [ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="2_dxi7f"]
+[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="2_reh0i"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="2_ulvfy"]
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="2_y3qo1"]
 
@@ -38,3 +40,9 @@ shape = SubResource("CircleShape2D_umgoa")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
 position = Vector2(484, 619)
 shape = SubResource("RectangleShape2D_yroj7")
+
+[node name="White Exit" parent="." instance=ExtResource("1_ovsch")]
+position = Vector2(1711, 445)
+
+[node name="Black Exit" parent="." instance=ExtResource("2_reh0i")]
+position = Vector2(1710, 349)
