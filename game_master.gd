@@ -1,11 +1,16 @@
 extends Node
 
+func start_game():
+	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func next_level():
+	delete_level()
 
+func character_at_exit(character : bool):
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func delete_level():
+	pass
+
+func spawn_level(level):
 	pass
