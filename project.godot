@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 BlankLevel="*res://blank_level.tscn"
+GameMaster="*res://game_master.gd"
 
 [display]
 
