@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjcttugw0uh2p"]
 
+[ext_resource type="PackedScene" uid="uid://0hngokke8r1v" path="res://game_master.tscn" id="1_d4ego"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="1_khf3c"]
 [ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="1_ovsch"]
 [ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="2_dxi7f"]
 [ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="2_reh0i"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="2_ulvfy"]
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="2_y3qo1"]
-[ext_resource type="Script" path="res://exit.gd" id="7_h4u0y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umgoa"]
 radius = 290.016
@@ -15,6 +15,8 @@ radius = 290.016
 size = Vector2(593.5, 642.25)
 
 [node name="Level 0" type="Node2D"]
+
+[node name="game master" parent="." instance=ExtResource("1_d4ego")]
 
 [node name="whiteSpawner" parent="." instance=ExtResource("2_y3qo1")]
 position = Vector2(598, 877)
@@ -45,12 +47,7 @@ shape = SubResource("RectangleShape2D_yroj7")
 [node name="White Exit" parent="." instance=ExtResource("1_ovsch")]
 z_index = 2
 position = Vector2(1711, 445)
-collision_layer = 0
-collision_mask = 9
-script = ExtResource("7_h4u0y")
 
 [node name="Black Exit" parent="." instance=ExtResource("2_reh0i")]
 z_index = 2
 position = Vector2(1710, 349)
-collision_layer = 0
-collision_mask = 8

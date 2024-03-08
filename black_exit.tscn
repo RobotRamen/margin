@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://drtn8scom3w20"]
+[gd_scene load_steps=4 format=3 uid="uid://drtn8scom3w20"]
 
 [ext_resource type="Texture2D" uid="uid://enohvkaq7lav" path="res://sprites/black_character.png" id="1_2wvca"]
+[ext_resource type="Script" path="res://exit_block.gd" id="1_jx6vp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl8to"]
 size = Vector2(54, 98)
 
-[node name="White Exit" type="Area2D"]
+[node name="Black Exit" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_jx6vp")
+exit_colour = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2wvca")
@@ -14,3 +19,5 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_yl8to")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

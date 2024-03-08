@@ -9,6 +9,10 @@ func next_level():
 	pass
 
 func character_at_exit(character : bool):
+	if character:
+		print("White character entered the exit!")
+	else:
+		print("Black character entered the exit!")
 	pass
 
 func delete_level():
