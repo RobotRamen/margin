@@ -1,10 +1,12 @@
 extends Node
 
+@export var levels : Array[PackedScene]
+
 func start_game():
 	pass
 
 func next_level():
-	delete_level()
+	pass
 
 func character_at_exit(character : bool):
 	pass
