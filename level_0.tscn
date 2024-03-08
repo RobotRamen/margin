@@ -42,7 +42,13 @@ position = Vector2(484, 619)
 shape = SubResource("RectangleShape2D_yroj7")
 
 [node name="White Exit" parent="." instance=ExtResource("1_ovsch")]
+z_index = 2
 position = Vector2(1711, 445)
+collision_layer = 0
+collision_mask = 9
 
 [node name="Black Exit" parent="." instance=ExtResource("2_reh0i")]
+z_index = 2
 position = Vector2(1710, 349)
+collision_layer = 0
+collision_mask = 8
