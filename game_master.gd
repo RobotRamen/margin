@@ -15,6 +15,14 @@ func character_at_exit(character : bool):
 		print("Black character entered the exit!")
 	pass
 
+func character_left_exit(character : bool):
+	if character:
+		print("White character exited the exit!")
+	else:
+		print("Black character exited the exit!")
+	pass
+
+
 func delete_level():
 	pass
 
