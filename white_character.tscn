@@ -28,3 +28,15 @@ offset = Vector2(30, 0)
 
 [node name="bullet spawn" type="Node2D" parent="gun"]
 position = Vector2(55, 0)
+
+[node name="shoot sound" type="AudioStreamPlayer" parent="."]
+
+[node name="jump sound" type="AudioStreamPlayer" parent="."]
+
+[node name="recall sound" type="AudioStreamPlayer" parent="."]
+
+[node name="recall pickup sound" type="AudioStreamPlayer" parent="."]
+max_polyphony = 100
+
+[node name="switch sound" type="AudioStreamPlayer" parent="."]
+max_polyphony = 100

@@ -4,3 +4,7 @@
 
 [node name="game master" type="Node"]
 script = ExtResource("1_xp3r1")
+
+[node name="game music" type="AudioStreamPlayer" parent="."]
+
+[node name="menu music" type="AudioStreamPlayer" parent="."]

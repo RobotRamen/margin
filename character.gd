@@ -37,6 +37,13 @@ var max_size =  Vector2(1.,1.)
 var size_increment =  Vector2(0.2,0.2)
 
 
+@onready var shoot_sound = $"shoot sound"
+@onready var jump_sound = $"jump sound"
+@onready var recall_sound = $"recall sound"
+@onready var recall_pickup_sound = $"recall pickup sound"
+@onready var switch_sound = $"switch sound"
+
+
 func _ready():
 	if controlled_by_0:
 		jump_b = "jump_0"
@@ -105,6 +112,7 @@ func fire(mouse_position):
 		add_sibling(new_bullet)
 		new_bullet.position = bullet_spawn.global_position
 		new_bullet.apply_central_impulse((mouse_position - new_bullet.position).normalized() * bullet_impulse)
+		shoot_sound.play()
 
 func add_pixel(pixel):
 	if pixel not in restore_pixels:
@@ -141,12 +149,14 @@ func restore():
 		
 	if(restores):
 		size_restore_step = (max_size - scale)/restores
+		recall_sound.play()
 	else:
 		size_restore_step = max_size - scale
 		scale = max_size
 	restore_pixels = []
 
 func on_restore_pickup():
+	recall_pickup_sound.play()
 	if scale >= max_size:
 		scale.clamp(min_size, max_size)
 	else:
@@ -161,6 +171,7 @@ func switch():
 		jump_b = "jump_0"
 		shoot_b = "shoot_0"
 		restore_b = "restore_0"
+		switch_sound.play()
 	else:
 		jump_b = "jump_1"
 		shoot_b = "shoot_1"
