@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	GameMaster.start_game()
 
 
 func _on_controls_button_pressed():
@@ -12,7 +12,6 @@ func _on_controls_button_pressed():
 func _on_credits_button_pressed():
 	$VBoxContainer.visible = false
 	$Credits.visible = true
-
 
 
 func _on_exit_button_pressed():
