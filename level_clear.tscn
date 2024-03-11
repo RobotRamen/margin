@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkcxs0xc4hbd0"]
+
+[ext_resource type="Script" path="res://level_clear.gd" id="1_if7ku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1aji"]
+size = Vector2(1920, 1080)
+
+[node name="level_clear" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_if7ku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(960, 540)
+shape = SubResource("RectangleShape2D_e1aji")

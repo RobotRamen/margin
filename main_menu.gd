@@ -2,6 +2,7 @@ extends CanvasLayer
 
 func _on_start_button_pressed():
 	GameMaster.start_game()
+	visible = false
 
 
 func _on_controls_button_pressed():

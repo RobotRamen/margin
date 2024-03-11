@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://igk0gdcmonds"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_3kvgn"]
+[ext_resource type="Texture2D" uid="uid://c8ea7q0e2nokf" path="res://sprites/white_character.png" id="2_s0c0n"]
+[ext_resource type="Texture2D" uid="uid://bubklwa63xbgh" path="res://sprites/white_gun.png" id="3_18c34"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66t2t"]
+radius = 25.0
+height = 96.0
+
+[node name="whiteCharacter" type="CharacterBody2D"]
+z_index = 3
+collision_layer = 8
+script = ExtResource("1_3kvgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
+texture = ExtResource("2_s0c0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+shape = SubResource("CapsuleShape2D_66t2t")
+
+[node name="gun" type="Sprite2D" parent="."]
+position = Vector2(0, -41)
+texture = ExtResource("3_18c34")
+offset = Vector2(30, 0)
+
+[node name="bullet spawn" type="Node2D" parent="gun"]
+position = Vector2(55, 0)
+
+[node name="shoot sound" type="AudioStreamPlayer" parent="."]
+
+[node name="jump sound" type="AudioStreamPlayer" parent="."]
+
+[node name="recall sound" type="AudioStreamPlayer" parent="."]
+
+[node name="recall pickup sound" type="AudioStreamPlayer" parent="."]
+max_polyphony = 100
+
+[node name="switch sound" type="AudioStreamPlayer" parent="."]
+max_polyphony = 100

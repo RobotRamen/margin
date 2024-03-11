@@ -35,7 +35,9 @@ var size_restore_step =  Vector2(0.01,0.01)
 var min_size = Vector2(0.4,0.4)
 var max_size =  Vector2(1.,1.)
 var size_increment =  Vector2(0.2,0.2)
+var target_size =  Vector2(1.,1.)
 
+var tween : Tween
 
 @onready var shoot_sound = $"shoot sound"
 @onready var jump_sound = $"jump sound"
@@ -107,7 +109,8 @@ func fire(mouse_position):
 	if scale - (size_increment/2)  <= min_size:
 		scale = min_size
 	else:
-		scale = (scale-size_increment).clamp(min_size, max_size)
+		#scale = (scale-size_increment).clamp(min_size, max_size)
+		tween_to_size((scale-size_increment).clamp(min_size, max_size))
 		var new_bullet : RigidBody2D = bullet_scene.instantiate()
 		add_sibling(new_bullet)
 		new_bullet.position = bullet_spawn.global_position
@@ -150,6 +153,7 @@ func restore():
 	if(restores):
 		size_restore_step = (max_size - scale)/restores
 		recall_sound.play()
+		target_size = scale
 	else:
 		size_restore_step = max_size - scale
 		scale = max_size
@@ -160,7 +164,9 @@ func on_restore_pickup():
 	if scale >= max_size:
 		scale.clamp(min_size, max_size)
 	else:
-		scale += size_restore_step
+		#scale += size_restore_step
+		target_size += size_restore_step
+		tween_to_size((target_size).clamp(min_size, max_size))
 		scale.clamp(min_size, max_size)
 		
 
@@ -176,3 +182,9 @@ func switch():
 		jump_b = "jump_1"
 		shoot_b = "shoot_1"
 		restore_b = "restore_1"
+
+func tween_to_size(target_size : Vector2):
+	if tween:
+		tween.kill() # Abort the previous animation.
+	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(self, "scale", target_size, 1)
