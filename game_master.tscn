@@ -6,7 +6,7 @@
 
 [node name="game master" type="Node"]
 script = ExtResource("1_xp3r1")
-levels = Array[PackedScene]([ExtResource("2_mj0lf"), ExtResource("3_t6p1j")])
+levels = Array[PackedScene]([ExtResource("2_mj0lf"), ExtResource("3_t6p1j"), ExtResource("2_mj0lf")])
 
 [node name="game music" type="AudioStreamPlayer" parent="."]
 
