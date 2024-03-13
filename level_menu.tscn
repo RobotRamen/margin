@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://din18da3xggj"]
+
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_vmrrl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnm2i"]
+size = Vector2(827, 1158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6d5"]
+size = Vector2(437, 43.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u85vy"]
+size = Vector2(900, 307.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc3w4"]
+size = Vector2(900, 515.688)
+
+[node name="level_1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("4_vmrrl")]
+collision_layer = 0
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="black_start"]
+position = Vector2(383.5, 550.75)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
+position = Vector2(956, 797)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="black_start"]
+position = Vector2(955, 670)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="black_start"]
+position = Vector2(952, 540)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1524, 561)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="black_start"]
+position = Vector2(959, 1065)
+shape = SubResource("RectangleShape2D_u85vy")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="black_start"]
+position = Vector2(980, 153)
+shape = SubResource("RectangleShape2D_gc3w4")

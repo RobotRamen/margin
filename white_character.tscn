@@ -1,8 +1,99 @@
-[gd_scene load_steps=5 format=3 uid="uid://igk0gdcmonds"]
+[gd_scene load_steps=18 format=3 uid="uid://igk0gdcmonds"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_3kvgn"]
-[ext_resource type="Texture2D" uid="uid://c8ea7q0e2nokf" path="res://sprites/white_character.png" id="2_s0c0n"]
+[ext_resource type="Texture2D" uid="uid://ds0mqmjlrnu0" path="res://sprites/Bouba_walk_sprite_sheet_v1.png" id="2_d1keo"]
 [ext_resource type="Texture2D" uid="uid://bubklwa63xbgh" path="res://sprites/white_gun.png" id="3_18c34"]
+[ext_resource type="Texture2D" uid="uid://wwb28fkns5fu" path="res://sprites/bouba walk v2.png" id="3_knkvv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpek4"]
+atlas = ExtResource("2_d1keo")
+region = Rect2(0, 0, 51, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_girnu"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(0, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dh7y"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(50, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfko4"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(100, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5n6t"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(150, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hof05"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(200, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tundj"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(250, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejk5w"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(300, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2l5f"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(350, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywbur"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(400, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx6mr"]
+atlas = ExtResource("3_knkvv")
+region = Rect2(450, 0, 50, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khvge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpek4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_girnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dh7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfko4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5n6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hof05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tundj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejk5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2l5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywbur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx6mr")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 20.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66t2t"]
 radius = 25.0
@@ -13,15 +104,18 @@ z_index = 3
 collision_layer = 8
 script = ExtResource("1_3kvgn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -50)
-texture = ExtResource("2_s0c0n")
+sprite_frames = SubResource("SpriteFrames_khvge")
+animation = &"Walk"
+autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_66t2t")
 
 [node name="gun" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -41)
 texture = ExtResource("3_18c34")
 offset = Vector2(30, 0)

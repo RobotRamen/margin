@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3n61u0xg3gqj"]
 
-[ext_resource type="Texture2D" uid="uid://csxeedq75ib36" path="res://sprites/white_circle.png" id="1_pniq6"]
+[ext_resource type="Texture2D" uid="uid://c46cp6csvrorr" path="res://sprites/pixel.png" id="1_jmnpl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkaoa"]
 radius = 9.0
@@ -15,24 +15,24 @@ scale = Vector2(0.3125, 0.3125)
 
 [node name="side_sprite2" type="Sprite2D" parent="side_sprites"]
 position = Vector2(-44.8, -38.4)
-texture = ExtResource("1_pniq6")
+texture = ExtResource("1_jmnpl")
 
 [node name="side_sprite3" type="Sprite2D" parent="side_sprites"]
 position = Vector2(-38.4, 9.6)
-texture = ExtResource("1_pniq6")
+texture = ExtResource("1_jmnpl")
 
 [node name="side_sprite4" type="Sprite2D" parent="side_sprites"]
 position = Vector2(19.2, -51.2)
-texture = ExtResource("1_pniq6")
+texture = ExtResource("1_jmnpl")
 
 [node name="side_sprite5" type="Sprite2D" parent="side_sprites"]
 position = Vector2(22.4, 6.4)
-texture = ExtResource("1_pniq6")
+texture = ExtResource("1_jmnpl")
 
 [node name="main_sprite" type="Sprite2D" parent="."]
 z_index = -2
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_pniq6")
+texture = ExtResource("1_jmnpl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xkaoa")

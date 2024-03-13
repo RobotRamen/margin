@@ -40,7 +40,6 @@ func character_left_exit(character : bool):
 		white_exit = false
 	else:
 		black_exit = false
-	pass
 
 
 func delete_level(level : Node):
@@ -57,3 +56,8 @@ func spawn_level(level : PackedScene):
 
 func spawn_clear():
 	add_sibling(LEVEL_CLEAR.instantiate())
+
+func _unhandled_input(event):
+	if event.is_action("restart"):
+		current_level_index -= 1
+		clear_level()

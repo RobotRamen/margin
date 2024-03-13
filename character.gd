@@ -44,6 +44,7 @@ var tween : Tween
 @onready var recall_sound = $"recall sound"
 @onready var recall_pickup_sound = $"recall pickup sound"
 @onready var switch_sound = $"switch sound"
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 
 func _ready():
@@ -61,11 +62,16 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	#if is_on_floor() and animated_sprite_2d.animation == "Jump":
+		#animated_sprite_2d.play("Idle")
+	
 
 	# Handle Jump.
 	if Input.is_action_just_pressed(jump_b) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
+		animated_sprite_2d.play("Jump")
+		
 	if Input.is_action_just_pressed(restore_b):
 		restore()
 	
@@ -96,6 +102,18 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(shoot_b):
 		fire(gun.global_position + 600 * Vector2.from_angle(gun.rotation))
 	
+	print(look_direction)
+	
+	if look_direction.x < 0:
+		animated_sprite_2d.flip_h = true
+	elif look_direction.x > 0:
+		animated_sprite_2d.flip_h = false
+	
+	if direction != 0 and !is_on_floor():
+		animated_sprite_2d.play("Walk")
+	elif !is_on_floor():
+		animated_sprite_2d.play("Idle")
+	
 	move_and_slide()
 	
 func _input(event):
@@ -104,6 +122,10 @@ func _input(event):
 			fire(event.position)
 	elif event is InputEventMouseMotion and controlled_by_0:
 		gun.look_at(event.position)
+		if event.position.x - global_position.x < 0:
+			animated_sprite_2d.flip_h = true
+		else:
+			animated_sprite_2d.flip_h = false
 
 func fire(mouse_position):
 	if scale - (size_increment/2)  <= min_size:
