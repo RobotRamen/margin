@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://drrw6qxqri0ov"]
+
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_o83p6"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_i3bdb"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_y2akg"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_2i1hb"]
+[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_4ps2s"]
+[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_rdc74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ymvw"]
+size = Vector2(529, 425)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6d5"]
+size = Vector2(530, 153.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai0ib"]
+size = Vector2(548.25, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6phw"]
+size = Vector2(462, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxrx6"]
+size = Vector2(255.75, 209.5)
+
+[node name="level_1" type="Node2D"]
+
+[node name="whiteSpawner" parent="." instance=ExtResource("1_o83p6")]
+position = Vector2(134, 994)
+scene = ExtResource("2_i3bdb")
+
+[node name="blackSpawner" parent="." instance=ExtResource("1_o83p6")]
+position = Vector2(133, 574)
+scene = ExtResource("3_y2akg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("4_2i1hb")]
+collision_layer = 0
+
+[node name="Wall1" type="CollisionShape2D" parent="black_start"]
+position = Vector2(312.5, 866.5)
+shape = SubResource("RectangleShape2D_3ymvw")
+
+[node name="Wall2" type="CollisionShape2D" parent="black_start"]
+position = Vector2(318, 213)
+shape = SubResource("RectangleShape2D_3ymvw")
+
+[node name="Ceiling" type="CollisionShape2D" parent="black_start"]
+position = Vector2(847, 82)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="Floor1" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1211, 606)
+shape = SubResource("RectangleShape2D_ai0ib")
+
+[node name="Floor2" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1679, 520)
+shape = SubResource("RectangleShape2D_h6phw")
+
+[node name="Wall7" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1066, 461)
+shape = SubResource("RectangleShape2D_bxrx6")
+
+[node name="White Exit" parent="." instance=ExtResource("5_4ps2s")]
+z_index = 2
+position = Vector2(1744, 520)
+
+[node name="Black Exit" parent="." instance=ExtResource("6_rdc74")]
+z_index = 2
+position = Vector2(1744, 422)

@@ -13,17 +13,18 @@ size = Vector2(154.25, 157.75)
 [node name="level_1" type="Node2D"]
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_xj4bd")]
-position = Vector2(1685, 567)
+position = Vector2(1685, 527)
 scene = ExtResource("2_o13h0")
 
 [node name="blackSpawner" parent="." instance=ExtResource("1_xj4bd")]
-position = Vector2(223, 747)
+position = Vector2(223, 707)
 scene = ExtResource("3_ph0jb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="black_start" parent="." instance=ExtResource("4_8mpf4")]
+position = Vector2(0, -40)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="black_start"]
@@ -76,8 +77,8 @@ shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="White Exit" parent="." instance=ExtResource("5_hg30r")]
 z_index = 2
-position = Vector2(178, 816)
+position = Vector2(178, 776)
 
 [node name="Black Exit" parent="." instance=ExtResource("6_eud2w")]
 z_index = 2
-position = Vector2(177, 720)
+position = Vector2(177, 680)
