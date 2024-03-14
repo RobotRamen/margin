@@ -15,6 +15,41 @@ size = Vector2(593.5, 642.25)
 
 [node name="Level 0" type="Node2D"]
 
+[node name="Text" type="Node" parent="."]
+
+[node name="Editing background" type="ColorRect" parent="Text"]
+visible = false
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 1916.0
+offset_bottom = 521.0
+
+[node name="KiKi shoots black" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 214.0
+offset_top = 96.0
+offset_right = 971.0
+offset_bottom = 221.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/bold_font_size = 72
+bbcode_enabled = true
+text = "[b]KiKi[/b] shoots black"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bouba shoots white" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 203.0
+offset_top = 591.0
+offset_right = 1004.0
+offset_bottom = 716.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/bold_font_size = 72
+bbcode_enabled = true
+text = "[b]Bouba[/b] shoots white"
+metadata/_edit_use_anchors_ = true
+
 [node name="whiteSpawner" parent="." instance=ExtResource("1_tg6qm")]
 position = Vector2(598, 877)
 scene = ExtResource("2_60ehv")

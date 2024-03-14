@@ -15,6 +15,52 @@ size = Vector2(458, 47.5)
 
 [node name="level_1" type="Node2D"]
 
+[node name="Text" type="Node" parent="."]
+
+[node name="Editing background" type="ColorRect" parent="Text"]
+visible = false
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 1916.0
+offset_bottom = 521.0
+
+[node name="KiKi exits here" type="RichTextLabel" parent="Text"]
+z_index = 2
+anchors_preset = -1
+anchor_right = 0.0739583
+anchor_bottom = 0.0703704
+offset_left = 784.0
+offset_top = 129.0
+offset_right = 1024.0
+offset_bottom = 274.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Shoot[/b] colour &
+[b]Resize[/b] to help
+your friend exit!"
+metadata/_edit_use_anchors_ = true
+
+[node name="& Bouba" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 1172.0
+offset_top = 525.0
+offset_right = 1364.0
+offset_bottom = 622.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[b]Recall[/b] to
+reload colour
+& resize"
+metadata/_edit_use_anchors_ = true
+
 [node name="whiteSpawner" parent="." instance=ExtResource("1_hapq1")]
 position = Vector2(593, 685)
 scene = ExtResource("2_upa5v")

@@ -18,6 +18,137 @@ size = Vector2(148.5, 117.5)
 
 [node name="Level 0" type="Node2D"]
 
+[node name="Text" type="Node" parent="."]
+
+[node name="Editing background" type="ColorRect" parent="Text"]
+visible = false
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 1916.0
+offset_bottom = 521.0
+
+[node name="KiKi moves in white" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 84.0
+offset_top = 164.0
+offset_right = 841.0
+offset_bottom = 289.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/bold_font_size = 72
+bbcode_enabled = true
+text = "[b]KiKi[/b] moves in white"
+metadata/_edit_use_anchors_ = true
+
+[node name="KiKi exits here" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 1637.0
+offset_top = 256.0
+offset_right = 1877.0
+offset_bottom = 401.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]KiKi[/b] exits 
+         here"
+metadata/_edit_use_anchors_ = true
+
+[node name="Kiki Jump" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 926.0
+offset_top = 348.0
+offset_right = 990.0
+offset_bottom = 389.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Jump
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Swap between Kiki" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 1172.0
+offset_top = 436.0
+offset_right = 1364.0
+offset_bottom = 533.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Swap between
+          [b]KiKi[/b]"
+metadata/_edit_use_anchors_ = true
+
+[node name="& Bouba" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 1172.0
+offset_top = 525.0
+offset_right = 1364.0
+offset_bottom = 622.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "            &
+       [b]Bouba[/b]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bouba moves in black" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 82.0
+offset_top = 586.0
+offset_right = 883.0
+offset_bottom = 711.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/bold_font_size = 72
+bbcode_enabled = true
+text = "[b]Bouba[/b] moves in black"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bouba exits here" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 1589.0
+offset_top = 754.0
+offset_right = 1876.0
+offset_bottom = 931.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[b]Bouba[/b] exits 
+              here"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bouba Jump" type="RichTextLabel" parent="Text"]
+z_index = 2
+offset_left = 925.0
+offset_top = 855.0
+offset_right = 989.0
+offset_bottom = 896.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Jump
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="whiteSpawner" parent="." instance=ExtResource("1_5jr24")]
 position = Vector2(110, 988)
 scene = ExtResource("2_qk74f")

@@ -4,8 +4,6 @@ extends Node
 @onready var game_music : AudioStreamPlayer = $"game music"
 @onready var menu_music : AudioStreamPlayer = $"menu music"
 const LEVEL_CLEAR = preload("res://level_clear.tscn")
-const CONTROLS_LEVEL = preload("res://controls_level.tscn")
-const CREDITS_LEVEL = preload("res://credits_level.tscn")
 
 var white_exit = false
 var black_exit = false
