@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://character.gd" id="1_3kvgn"]
 [ext_resource type="Texture2D" uid="uid://ds0mqmjlrnu0" path="res://sprites/Bouba_walk_sprite_sheet_v1.png" id="2_d1keo"]
-[ext_resource type="Texture2D" uid="uid://bubklwa63xbgh" path="res://sprites/white_gun.png" id="3_18c34"]
 [ext_resource type="Texture2D" uid="uid://wwb28fkns5fu" path="res://sprites/bouba walk v2.png" id="3_knkvv"]
+[ext_resource type="Texture2D" uid="uid://bnwl4xoc5xpti" path="res://sprites/white_ret.png" id="4_cgyy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpek4"]
 atlas = ExtResource("2_d1keo")
@@ -115,13 +115,15 @@ position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_66t2t")
 
 [node name="gun" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -41)
-texture = ExtResource("3_18c34")
 offset = Vector2(30, 0)
 
 [node name="bullet spawn" type="Node2D" parent="gun"]
 position = Vector2(55, 0)
+
+[node name="reticle" type="Sprite2D" parent="gun"]
+position = Vector2(211, 0)
+texture = ExtResource("4_cgyy6")
 
 [node name="shoot sound" type="AudioStreamPlayer" parent="."]
 

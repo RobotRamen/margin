@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://rebaetwey7ko"]
+
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="1_shsta"]
+[ext_resource type="PackedScene" uid="uid://o272qli62jpi" path="res://credits.tscn" id="2_axhws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnm2i"]
+size = Vector2(827, 1158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u85vy"]
+size = Vector2(2111, 307.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc3w4"]
+size = Vector2(1788, 515.688)
+
+[node name="Credits level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("1_shsta")]
+collision_layer = 0
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="black_start"]
+position = Vector2(69, 490)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1897, 523)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="black_start"]
+position = Vector2(971.5, 1065)
+shape = SubResource("RectangleShape2D_u85vy")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="black_start"]
+position = Vector2(965, -89)
+shape = SubResource("RectangleShape2D_gc3w4")
+
+[node name="Credits" parent="." instance=ExtResource("2_axhws")]
+anchors_preset = -1
+anchor_bottom = 0.759
+offset_left = -101.0
+offset_top = -183.0
+offset_right = 265.0
+offset_bottom = 183.0
+size_flags_horizontal = 3

@@ -4,6 +4,8 @@ extends Node
 @onready var game_music : AudioStreamPlayer = $"game music"
 @onready var menu_music : AudioStreamPlayer = $"menu music"
 const LEVEL_CLEAR = preload("res://level_clear.tscn")
+const CONTROLS_LEVEL = preload("res://controls_level.tscn")
+const CREDITS_LEVEL = preload("res://credits_level.tscn")
 
 var white_exit = false
 var black_exit = false
@@ -20,10 +22,12 @@ func start_game():
 	tween.tween_property(menu_music, "volume_db", -20, 1)
 	tween.tween_property(game_music, "volume_db", 0, 1)
 	tween.tween_callback(game_music.stop)
-	spawn_level(levels[current_level_index + 1])
+	current_level_index = 2
+	clear_level()
 
 func clear_level():
 	delete_level(current_level)
+	BlankLevel.visible = false
 	spawn_clear()
 
 func character_at_exit(character : bool):
@@ -59,5 +63,23 @@ func spawn_clear():
 
 func _unhandled_input(event):
 	if event.is_action("restart"):
+		restart()
+
+func restart():
 		current_level_index -= 1
 		clear_level()
+
+
+func _on_timer_timeout():
+	spawn_level(levels[current_level_index + 1])
+
+func open_credits():
+	current_level_index += 1
+	clear_level()
+
+func open_controls():
+	clear_level()
+
+func open_menu():
+	current_level_index = -1
+	clear_level()

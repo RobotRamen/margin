@@ -1,4 +1,8 @@
 extends CanvasLayer
+@onready var start_button = $"Node2D/start button"
+
+func _ready():
+	start_button.grab_focus()
 
 func _on_start_button_pressed():
 	GameMaster.start_game()
@@ -6,20 +10,12 @@ func _on_start_button_pressed():
 
 
 func _on_controls_button_pressed():
-	$Controls.visible = true
-	$VBoxContainer.visible = false
+	GameMaster.open_controls()
 
 
 func _on_credits_button_pressed():
-	$VBoxContainer.visible = false
-	$Credits.visible = true
+	GameMaster.open_credits()
 
 
 func _on_exit_button_pressed():
 	get_tree().quit()
-
-
-func _on_back_button_pressed():
-	$Credits.visible = false
-	$Controls.visible = false
-	$VBoxContainer.visible = true

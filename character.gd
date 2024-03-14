@@ -70,7 +70,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed(jump_b) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animated_sprite_2d.play("Jump")
 		
 	if Input.is_action_just_pressed(restore_b):
 		restore()
@@ -109,9 +108,9 @@ func _physics_process(delta):
 	elif look_direction.x > 0:
 		animated_sprite_2d.flip_h = false
 	
-	if direction != 0 and !is_on_floor():
+	if direction != 0:
 		animated_sprite_2d.play("Walk")
-	elif !is_on_floor():
+	else:
 		animated_sprite_2d.play("Idle")
 	
 	move_and_slide()

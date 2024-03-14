@@ -15,4 +15,5 @@ func _process(_delta):
 		pix.set_meta("colour", 2)
 	if(!overlapping_pix.is_empty()):
 		cleared.emit()
+		BlankLevel.visible = true
 		queue_free()

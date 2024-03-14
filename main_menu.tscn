@@ -1,161 +1,105 @@
-[gd_scene load_steps=3 format=3 uid="uid://urggwi841jnj"]
+[gd_scene load_steps=8 format=3 uid="uid://urggwi841jnj"]
 
-[ext_resource type="Texture2D" uid="uid://bnsve61b3ddyn" path="res://icon.svg" id="1_bnhcl"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_k0qd8"]
+[ext_resource type="Texture2D" uid="uid://bngmpq1ojc2ka" path="res://sprites/title.png" id="2_daqk3"]
+[ext_resource type="Theme" uid="uid://basjy2a0xiwrl" path="res://theme/Menu Theme.tres" id="3_83uan"]
+[ext_resource type="Script" path="res://start button.gd" id="4_ff7p7"]
+[ext_resource type="Script" path="res://controls button.gd" id="5_ix6sw"]
+[ext_resource type="Script" path="res://credits button.gd" id="6_1v6rp"]
+[ext_resource type="Script" path="res://exit button.gd" id="7_bers3"]
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_k0qd8")
 
-[node name="menu background" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -2
+offset_right = 1939.0
+offset_bottom = 1086.0
 
 [node name="game logo" type="TextureRect" parent="."]
-offset_left = 896.0
-offset_top = 201.0
-offset_right = 1024.0
-offset_bottom = 329.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -519.0
+offset_top = 121.0
+offset_right = 7224.0
+offset_bottom = 2092.0
 grow_horizontal = 2
+scale = Vector2(0.135, 0.135)
 size_flags_horizontal = 4
-texture = ExtResource("1_bnhcl")
+texture = ExtResource("2_daqk3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 244.0
-offset_top = 201.0
-offset_right = -244.0
-offset_bottom = -201.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="spacer2" type="Control" parent="VBoxContainer"]
-layout_mode = 2
+[node name="start button" type="Button" parent="Node2D"]
+offset_left = 921.0
+offset_top = 445.0
+offset_right = 998.0
+offset_bottom = 490.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
-size_flags_stretch_ratio = 8.0
-
-[node name="start button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
+focus_neighbor_top = NodePath("../exit button")
+focus_neighbor_bottom = NodePath("../controls button")
+focus_next = NodePath("../controls button")
+focus_previous = NodePath("../exit button")
+theme = ExtResource("3_83uan")
 text = "Start
 "
+script = ExtResource("4_ff7p7")
 
-[node name="controls button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="controls button" type="Button" parent="Node2D"]
+offset_left = 894.0
+offset_top = 583.0
+offset_right = 1026.0
+offset_bottom = 628.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
+focus_neighbor_top = NodePath("../start button")
+focus_neighbor_bottom = NodePath("../credits button")
+focus_next = NodePath("../credits button")
+focus_previous = NodePath(".")
+theme = ExtResource("3_83uan")
 text = "Controls"
+script = ExtResource("5_ix6sw")
 
-[node name="credits button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="credits button" type="Button" parent="Node2D"]
+offset_left = 905.0
+offset_top = 713.0
+offset_right = 1015.0
+offset_bottom = 758.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
+focus_neighbor_top = NodePath("../controls button")
+focus_neighbor_bottom = NodePath("../exit button")
+focus_next = NodePath("../exit button")
+focus_previous = NodePath("../controls button")
+theme = ExtResource("3_83uan")
 text = "Credits
 "
+script = ExtResource("6_1v6rp")
 
-[node name="exit button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="exit button" type="Button" parent="Node2D"]
+offset_left = 931.0
+offset_top = 844.0
+offset_right = 989.0
+offset_bottom = 889.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
+focus_neighbor_top = NodePath("../credits button")
+focus_neighbor_bottom = NodePath("../start button")
+focus_next = NodePath("../start button")
+focus_previous = NodePath("../credits button")
+theme = ExtResource("3_83uan")
 text = "Exit
 "
+script = ExtResource("7_bers3")
 
-[node name="spacer" type="Control" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-size_flags_stretch_ratio = 5.0
-
-[node name="Credits" type="Label" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -183.0
-offset_top = -107.0
-offset_right = 183.0
-offset_bottom = 259.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-focus_mode = 2
-text = "Game Design:
-Nicole Dingle
-Brendan Fallon
-Hani Dawood
-
-Game Development:
-Hani Dawood
-Brendan Fallon
-
-Music and sounds:
-Nicole Dingle
-
-Sprites and art:
-Nicole Dingle"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="back button" type="Button" parent="Credits"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.5
-offset_top = 260.0
-offset_right = 22.5
-offset_bottom = 291.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "back
-"
-
-[node name="Controls" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -371.0
-offset_top = -371.0
-offset_right = 371.0
-offset_bottom = 371.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_bnhcl")
-
-[node name="back button" type="Button" parent="Controls"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.5
-offset_top = 398.0
-offset_right = 22.5
-offset_bottom = 429.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "back
-"
-
-[connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/controls button" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Credits/back button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Controls/back button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="Node2D/start button" to="Node2D/start button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Node2D/start button" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="Node2D/controls button" to="Node2D/controls button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Node2D/controls button" to="." method="_on_controls_button_pressed"]
+[connection signal="mouse_entered" from="Node2D/credits button" to="Node2D/credits button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Node2D/credits button" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="Node2D/exit button" to="Node2D/exit button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Node2D/exit button" to="." method="_on_exit_button_pressed"]

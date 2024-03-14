@@ -1,7 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://btmbe16yn7fae"]
+[gd_scene load_steps=11 format=3 uid="uid://btmbe16yn7fae"]
 
-[ext_resource type="Texture2D" uid="uid://c8ea7q0e2nokf" path="res://sprites/white_character.png" id="1_nr5pu"]
 [ext_resource type="Script" path="res://exit_block.gd" id="1_rvevc"]
+[ext_resource type="Texture2D" uid="uid://ykjkmmdxbobw" path="res://sprites/bouba portal.png" id="2_v11ij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evwo1"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(0, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d0fw"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(60, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tee7h"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(120, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr0np"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(180, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acs7s"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(240, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsxar"]
+atlas = ExtResource("2_v11ij")
+region = Rect2(300, 0, 60, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0ubm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evwo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d0fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tee7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr0np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acs7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsxar")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl8to"]
 size = Vector2(54, 98)
@@ -11,11 +61,10 @@ collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_rvevc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 3)
-texture = ExtResource("1_nr5pu")
-flip_h = true
-flip_v = true
+sprite_frames = SubResource("SpriteFrames_l0ubm")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
