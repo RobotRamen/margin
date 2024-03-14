@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://0hngokke8r1v"]
+[gd_scene load_steps=12 format=3 uid="uid://0hngokke8r1v"]
 
 [ext_resource type="Script" path="res://game_master.gd" id="1_xp3r1"]
 [ext_resource type="PackedScene" uid="uid://din18da3xggj" path="res://level_menu.tscn" id="2_4o8qf"]
+[ext_resource type="PackedScene" uid="uid://gigpa0yd3xot" path="res://level_Start.tscn" id="2_i1kw2"]
 [ext_resource type="PackedScene" uid="uid://cjcttugw0uh2p" path="res://level_0.tscn" id="2_mj0lf"]
 [ext_resource type="PackedScene" uid="uid://dprm6hyb6k4yf" path="res://level_tutorial.tscn" id="3_t6p1j"]
 [ext_resource type="PackedScene" uid="uid://ksb5r7xjeel5" path="res://controls_level.tscn" id="3_wb6jm"]
@@ -13,7 +14,7 @@
 
 [node name="game master" type="Node"]
 script = ExtResource("1_xp3r1")
-levels = Array[PackedScene]([ExtResource("2_4o8qf"), ExtResource("3_wb6jm"), ExtResource("4_sv0uk"), ExtResource("2_mj0lf"), ExtResource("3_t6p1j"), ExtResource("4_efjal"), ExtResource("5_lamal"), ExtResource("5_1w04x"), ExtResource("5_scnkc")])
+levels = Array[PackedScene]([ExtResource("2_4o8qf"), ExtResource("3_wb6jm"), ExtResource("4_sv0uk"), ExtResource("2_i1kw2"), ExtResource("2_mj0lf"), ExtResource("3_t6p1j"), ExtResource("4_efjal"), ExtResource("5_lamal"), ExtResource("5_1w04x"), ExtResource("5_scnkc")])
 
 [node name="game music" type="AudioStreamPlayer" parent="."]
 

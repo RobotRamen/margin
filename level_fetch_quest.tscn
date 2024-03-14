@@ -1,29 +1,29 @@
 [gd_scene load_steps=8 format=3 uid="uid://hpkiewx83nq2"]
 
-[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_xj4bd"]
-[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_o13h0"]
-[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_ph0jb"]
-[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_8mpf4"]
-[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_hg30r"]
-[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_eud2w"]
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_glpbw"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_kj0ud"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_8dslt"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_lhsny"]
+[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_7s558"]
+[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_w7bt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ymvw"]
 size = Vector2(154.25, 157.75)
 
 [node name="level_1" type="Node2D"]
 
-[node name="whiteSpawner" parent="." instance=ExtResource("1_xj4bd")]
+[node name="whiteSpawner" parent="." instance=ExtResource("1_glpbw")]
 position = Vector2(1685, 527)
-scene = ExtResource("2_o13h0")
+scene = ExtResource("2_kj0ud")
 
-[node name="blackSpawner" parent="." instance=ExtResource("1_xj4bd")]
+[node name="blackSpawner" parent="." instance=ExtResource("1_glpbw")]
 position = Vector2(223, 707)
-scene = ExtResource("3_ph0jb")
+scene = ExtResource("3_8dslt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="black_start" parent="." instance=ExtResource("4_8mpf4")]
+[node name="black_start" parent="." instance=ExtResource("4_lhsny")]
 position = Vector2(0, -40)
 collision_layer = 0
 
@@ -75,10 +75,10 @@ shape = SubResource("RectangleShape2D_3ymvw")
 position = Vector2(1700, 850)
 shape = SubResource("RectangleShape2D_3ymvw")
 
-[node name="White Exit" parent="." instance=ExtResource("5_hg30r")]
+[node name="White Exit" parent="." instance=ExtResource("5_7s558")]
 z_index = 2
 position = Vector2(178, 776)
 
-[node name="Black Exit" parent="." instance=ExtResource("6_eud2w")]
+[node name="Black Exit" parent="." instance=ExtResource("6_w7bt5")]
 z_index = 2
 position = Vector2(177, 680)

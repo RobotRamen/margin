@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://gigpa0yd3xot"]
+
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_5jr24"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_qk74f"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_1gu8m"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_fxgnm"]
+[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_wjkst"]
+[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_8pcpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yroj7"]
+size = Vector2(1916.75, 389)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdbbb"]
+size = Vector2(875.5, 120.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8jqa"]
+size = Vector2(148.5, 117.5)
+
+[node name="Level 0" type="Node2D"]
+
+[node name="whiteSpawner" parent="." instance=ExtResource("1_5jr24")]
+position = Vector2(110, 988)
+scene = ExtResource("2_qk74f")
+
+[node name="blackSpawner" parent="." instance=ExtResource("1_5jr24")]
+position = Vector2(123, 426)
+scene = ExtResource("3_1gu8m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("4_fxgnm")]
+collision_layer = 0
+
+[node name="Bouba Area" type="CollisionShape2D" parent="black_start"]
+position = Vector2(962.625, 715.5)
+shape = SubResource("RectangleShape2D_yroj7")
+
+[node name="Bouba Floor 1" type="CollisionShape2D" parent="black_start"]
+position = Vector2(443, 970.375)
+shape = SubResource("RectangleShape2D_jdbbb")
+
+[node name="Bouba Floor 2" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1480.25, 970)
+shape = SubResource("RectangleShape2D_jdbbb")
+
+[node name="Kiki Box" type="CollisionShape2D" parent="black_start"]
+position = Vector2(958.75, 462.75)
+shape = SubResource("RectangleShape2D_g8jqa")
+
+[node name="White Exit" parent="." instance=ExtResource("5_wjkst")]
+z_index = 2
+position = Vector2(1798, 953)
+
+[node name="Black Exit" parent="." instance=ExtResource("6_8pcpv")]
+z_index = 2
+position = Vector2(1794, 440)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://s8kcu3a61lxf"]
 
-[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_t4u7x"]
-[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_catv1"]
-[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_dssdq"]
-[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_bl403"]
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_0ng6o"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_oiknx"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_1t5gj"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_l0rog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ymvw"]
 size = Vector2(273.063, 43.875)
@@ -16,18 +16,18 @@ size = Vector2(179.5, 41)
 
 [node name="level_1" type="Node2D"]
 
-[node name="whiteSpawner" parent="." instance=ExtResource("1_t4u7x")]
+[node name="whiteSpawner" parent="." instance=ExtResource("1_0ng6o")]
 position = Vector2(638, 312)
-scene = ExtResource("2_catv1")
+scene = ExtResource("2_oiknx")
 
-[node name="blackSpawner" parent="." instance=ExtResource("1_t4u7x")]
+[node name="blackSpawner" parent="." instance=ExtResource("1_0ng6o")]
 position = Vector2(227, 928)
-scene = ExtResource("3_dssdq")
+scene = ExtResource("3_1t5gj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="black_start" parent="." instance=ExtResource("4_bl403")]
+[node name="black_start" parent="." instance=ExtResource("4_l0rog")]
 collision_layer = 0
 
 [node name="The" type="Node" parent="black_start"]

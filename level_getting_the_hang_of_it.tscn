@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://cmcelh5sklg2g"]
 
-[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_lkgf6"]
-[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_sxvd2"]
-[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_1vpi8"]
-[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_s8qm3"]
-[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_nwj7a"]
-[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_h6bsj"]
+[ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_3ullf"]
+[ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_n5nd7"]
+[ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_vr854"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_bgtc8"]
+[ext_resource type="PackedScene" uid="uid://btmbe16yn7fae" path="res://white_exit.tscn" id="5_aok0o"]
+[ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_82gvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ymvw"]
 size = Vector2(68, 425)
@@ -30,18 +30,18 @@ size = Vector2(116.406, 158.563)
 
 [node name="level_1" type="Node2D"]
 
-[node name="whiteSpawner" parent="." instance=ExtResource("1_lkgf6")]
+[node name="whiteSpawner" parent="." instance=ExtResource("1_3ullf")]
 position = Vector2(83, 994)
-scene = ExtResource("2_sxvd2")
+scene = ExtResource("2_n5nd7")
 
-[node name="blackSpawner" parent="." instance=ExtResource("1_lkgf6")]
+[node name="blackSpawner" parent="." instance=ExtResource("1_3ullf")]
 position = Vector2(85, 589)
-scene = ExtResource("3_1vpi8")
+scene = ExtResource("3_vr854")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="black_start" parent="." instance=ExtResource("4_s8qm3")]
+[node name="black_start" parent="." instance=ExtResource("4_bgtc8")]
 collision_layer = 0
 
 [node name="Pillar1" type="CollisionShape2D" parent="black_start"]
@@ -108,12 +108,12 @@ shape = SubResource("RectangleShape2D_cwa7k")
 position = Vector2(1719.84, 1001)
 shape = SubResource("RectangleShape2D_cwa7k")
 
-[node name="White Exit" parent="." instance=ExtResource("5_nwj7a")]
+[node name="White Exit" parent="." instance=ExtResource("5_aok0o")]
 z_index = 2
 position = Vector2(1831, 881)
 rotation = 3.14159
 
-[node name="Black Exit" parent="." instance=ExtResource("6_h6bsj")]
+[node name="Black Exit" parent="." instance=ExtResource("6_82gvj")]
 z_index = 2
 position = Vector2(1832, 980)
 rotation = 3.14159
