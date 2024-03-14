@@ -57,6 +57,7 @@ Recall - CTRL
 Switch character - E"
 
 [node name="Label" type="Label" parent="Label"]
+layout_mode = 0
 offset_left = 472.0
 offset_right = 888.0
 offset_bottom = 265.0
@@ -67,6 +68,7 @@ Recall - Left trigger
 Switch character - Y"
 
 [node name="Label" type="Label" parent="Label/Label"]
+layout_mode = 0
 offset_left = -472.0
 offset_top = -225.0
 offset_right = 428.0
