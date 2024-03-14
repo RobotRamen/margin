@@ -19,3 +19,9 @@ func _ready():
 						side_sprite.z_index = randi_range(-1,1)
 				new_pixel.rotate(deg_to_rad(randf_range(0., 360.)))
 				new_pixel.set_meta("colour", 1)
+
+
+func _on_timer_timeout():
+	for pix in get_children():
+		if pix is Node2D:
+			pix.rotation += 0.1
