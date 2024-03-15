@@ -46,6 +46,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="& Bouba" type="RichTextLabel" parent="Text"]
 z_index = 2
+anchors_preset = -1
+anchor_right = 0.00729167
+anchor_bottom = 0.0175926
 offset_left = 1172.0
 offset_top = 525.0
 offset_right = 1364.0

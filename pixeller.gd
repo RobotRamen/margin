@@ -21,7 +21,7 @@ func _ready():
 				new_pixel.set_meta("colour", 1)
 
 
-func _on_timer_timeout():
-	for pix in get_children():
-		if pix is Node2D:
-			pix.rotation += 0.1
+#func _on_timer_timeout():
+#	for pix in get_children():
+#		if pix is Node2D:
+#			pix.rotation += 0.1
