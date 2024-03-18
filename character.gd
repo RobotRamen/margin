@@ -7,9 +7,10 @@ var wasd_input = Vector2()
 
 @export var controlled_by_0 = true
 @export var controlled_by_1 = false
-var jump_b = "jump_0"
-var shoot_b = "shoot_0"
-var restore_b = "restore_0"
+@export var is_single_player = true
+var jump_b
+var shoot_b
+var restore_b
 var switch_b = "switch"
 
 var bullet_impulse = 2000
@@ -48,14 +49,7 @@ var tween : Tween
 
 
 func _ready():
-	if controlled_by_0:
-		jump_b = "jump_0"
-		shoot_b = "shoot_0"
-		restore_b = "restore_0"
-	if controlled_by_1:
-		jump_b = "jump_1"
-		shoot_b = "shoot_1"
-		restore_b = "restore_1"
+	set_controls()
 		
 
 func _physics_process(delta):
@@ -79,21 +73,11 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if controlled_by_0:
-		direction = Input.get_axis("left_0", "right_0")
-	elif controlled_by_1:
-		direction = Input.get_axis("left_1", "right_1")
-	else:
-		direction = 0
+	set_direction()
 		
 	velocity.x = direction * SPEED
 	
-	if controlled_by_0:
-		look_direction = Input.get_vector("look_left_0", "look_right_0", "look_up_0", "look_down_0")
-	elif controlled_by_1:
-		look_direction = Input.get_vector("look_left_1", "look_right_1", "look_up_1", "look_down_1")
-	else:
-		look_direction = Vector2(0,0)
+	set_look_direction()
 	
 	if look_direction.length() >= 0.1:
 		gun.look_at(gun.global_position + look_direction)
@@ -194,18 +178,35 @@ func on_restore_pickup():
 func switch():
 	controlled_by_0 = !controlled_by_0
 	controlled_by_1 = !controlled_by_1
+	set_controls()
 	if controlled_by_0:
-		jump_b = "jump_0"
-		shoot_b = "shoot_0"
-		restore_b = "restore_0"
 		switch_sound.play()
-	else:
-		jump_b = "jump_1"
-		shoot_b = "shoot_1"
-		restore_b = "restore_1"
 
 func tween_to_size(target_size : Vector2):
 	if tween:
 		tween.kill() # Abort the previous animation.
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(self, "scale", target_size, 1)
+
+func set_controls():
+	if is_single_player:
+		if controlled_by_0:
+			jump_b = "jump_0"
+			shoot_b = "shoot_0"
+			switch_b = "switch_0"
+
+func set_direction():
+	if controlled_by_0:
+		direction = Input.get_axis("left_0", "right_0")
+	elif controlled_by_1:
+		direction = Input.get_axis("left_1", "right_1")
+	else:
+		direction = 0
+
+func set_look_direction():
+	if controlled_by_0:
+		look_direction = Input.get_vector("look_left_0", "look_right_0", "look_up_0", "look_down_0")
+	elif controlled_by_1:
+		look_direction = Input.get_vector("look_left_1", "look_right_1", "look_up_1", "look_down_1")
+	else:
+		look_direction = Vector2(0,0)
