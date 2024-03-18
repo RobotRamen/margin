@@ -37,9 +37,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -37.0
-offset_top = 357.0
+offset_top = 389.0
 offset_right = 24.0
-offset_bottom = 391.0
+offset_bottom = 423.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hclrw")
@@ -50,9 +50,9 @@ script = ExtResource("3_oayn6")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = -259.0
-offset_top = 94.0
+offset_top = 65.0
 offset_right = 212.0
-offset_bottom = 497.0
+offset_bottom = 530.0
 theme_override_fonts/font = ExtResource("4_y4lgp")
 text = "Keyboard/mouse:
 Move . . . . . . . . WASD
@@ -61,7 +61,8 @@ Jump . . . . . . . . Space
 Shoot . . . . . . . . Left Mouse Click
 Recall . . . . . . . . Q
 Switch character . . E
-Restart . . . . . . . . L"
+Restart . . . . . . . . L
+Pause . . . . . . . . Escape"
 justification_flags = 162
 
 [node name="Label" type="Label" parent="Label"]
@@ -77,14 +78,15 @@ Jump . . . . . . . . A
 Shoot . . . . . . . . Right trigger
 Recall . . . . . . . . Left trigger
 Switch character . . Y
-Restart . . . . . . . . Start"
+Restart . . . . . . . . Select
+Pause  . . . . . . . . Start"
 
 [node name="Label" type="Label" parent="Label/Label"]
 layout_mode = 0
 offset_left = -472.0
-offset_top = -225.0
+offset_top = -183.0
 offset_right = 428.0
-offset_bottom = -81.0
+offset_bottom = -30.0
 theme_override_fonts/font = ExtResource("4_y4lgp")
 text = "Out of bounds can be played by one or two players:
 Player 1 can use a controller or keyboard/mouse

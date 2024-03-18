@@ -310,7 +310,7 @@ func set_direction():
 func set_look_direction():
 	if is_single_player and controlled_by_1:
 		look_direction = Vector2(0,0)
-	if (controlled_by_0 or controlled_by_1) and !is_keyboard:
+	elif (is_keyboard and controlled_by_1) or !is_keyboard:
 		look_direction = Input.get_vector(look_left, look_right, look_up, look_down)
 	else:
 		look_direction = Vector2(0,0)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl4uv70vy3d6r"]
+[gd_scene load_steps=6 format=3 uid="uid://dl4uv70vy3d6r"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_m88jp"]
 [ext_resource type="Theme" uid="uid://basjy2a0xiwrl" path="res://theme/Menu Theme.tres" id="2_x6a4o"]
 [ext_resource type="Script" path="res://Main menu button.gd" id="3_jhl05"]
 [ext_resource type="Script" path="res://Restart button.gd" id="4_vjt0t"]
+[ext_resource type="FontFile" uid="uid://cfn7lbm1g7p0t" path="res://theme/Fresco Stamp.ttf" id="5_su3nq"]
 
 [node name="Pause menu" type="Control"]
 layout_mode = 3
@@ -35,9 +36,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -263.0
-offset_top = -108.0
+offset_top = -354.98
 offset_right = 263.0
-offset_bottom = 108.0
+offset_bottom = -138.981
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -86,6 +87,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+z_index = 5
+offset_left = 546.0
+offset_top = 500.0
+offset_right = 1017.0
+offset_bottom = 965.0
+theme_override_fonts/font = ExtResource("5_su3nq")
+theme_override_font_sizes/font_size = 40
+text = "Keyboard/mouse:
+Move . . . . . . . . WASD
+Aim  . . . . . . . . Mouse
+Jump . . . . . . . . Space
+Shoot . . . . . . . . Left Mouse Click
+Recall . . . . . . . . Q
+Switch character . . E
+Restart . . . . . . . . L
+Pause . . . . . . . . Escape"
+justification_flags = 162
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 472.0
+offset_right = 888.0
+offset_bottom = 265.0
+theme_override_fonts/font = ExtResource("5_su3nq")
+theme_override_font_sizes/font_size = 40
+text = "Controller:
+Move . . . . . . . . Left analog stick
+Aim   . . . . . . . . Right analog stick
+Jump . . . . . . . . A
+Shoot . . . . . . . . Right trigger
+Recall . . . . . . . . Left trigger
+Switch character . . Y
+Restart . . . . . . . . Select
+Pause  . . . . . . . . Start"
 
 [connection signal="focus_entered" from="VBoxContainer/Restart button" to="VBoxContainer/Restart button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Restart button" to="VBoxContainer/Restart button" method="_on_mouse_entered"]
