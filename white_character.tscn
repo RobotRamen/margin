@@ -119,7 +119,7 @@ position = Vector2(0, -41)
 offset = Vector2(30, 0)
 
 [node name="bullet spawn" type="Node2D" parent="gun"]
-position = Vector2(55, 0)
+position = Vector2(23, 0)
 
 [node name="reticle" type="Sprite2D" parent="gun"]
 position = Vector2(211, 0)
@@ -136,3 +136,8 @@ max_polyphony = 100
 
 [node name="switch sound" type="AudioStreamPlayer" parent="."]
 max_polyphony = 100
+
+[node name="jump timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+one_shot = true

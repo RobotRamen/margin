@@ -24,6 +24,7 @@ const JUMP_VELOCITY = -500.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var gun = $gun
+@onready var jump_timer = $"jump timer"
 
 @onready var bullet_spawn = $"gun/bullet spawn"
 
@@ -35,7 +36,7 @@ var size_restore_step =  Vector2(0.01,0.01)
 
 var min_size = Vector2(0.4,0.4)
 var max_size =  Vector2(1.,1.)
-var size_increment =  Vector2(0.2,0.2)
+var size_increment =  Vector2(0.12,0.12)
 var target_size =  Vector2(1.,1.)
 
 var tween : Tween
@@ -59,10 +60,11 @@ func _physics_process(delta):
 	
 	#if is_on_floor() and animated_sprite_2d.animation == "Jump":
 		#animated_sprite_2d.play("Idle")
-	
+	if !is_on_floor() and jump_timer.is_stopped():
+		jump_timer.start()
 
 	# Handle Jump.
-	if Input.is_action_just_pressed(jump_b) and is_on_floor():
+	if Input.is_action_just_pressed(jump_b) and (is_on_floor() or !jump_timer.is_stopped()):
 		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_just_pressed(restore_b):
