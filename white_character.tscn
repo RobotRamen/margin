@@ -1,13 +1,30 @@
-[gd_scene load_steps=18 format=3 uid="uid://igk0gdcmonds"]
+[gd_scene load_steps=23 format=3 uid="uid://igk0gdcmonds"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_3kvgn"]
 [ext_resource type="Texture2D" uid="uid://ds0mqmjlrnu0" path="res://sprites/Bouba_walk_sprite_sheet_v1.png" id="2_d1keo"]
 [ext_resource type="Texture2D" uid="uid://wwb28fkns5fu" path="res://sprites/bouba walk v2.png" id="3_knkvv"]
+[ext_resource type="Texture2D" uid="uid://cat057k4jojij" path="res://sprites/bouba jump.png" id="3_viibk"]
 [ext_resource type="Texture2D" uid="uid://bnwl4xoc5xpti" path="res://sprites/white_ret.png" id="4_cgyy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpek4"]
 atlas = ExtResource("2_d1keo")
 region = Rect2(0, 0, 51, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smui8"]
+atlas = ExtResource("3_viibk")
+region = Rect2(0, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0gqj"]
+atlas = ExtResource("3_viibk")
+region = Rect2(50, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_814kt"]
+atlas = ExtResource("3_viibk")
+region = Rect2(100, 0, 50, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8asm"]
+atlas = ExtResource("3_viibk")
+region = Rect2(150, 0, 50, 101)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_girnu"]
 atlas = ExtResource("3_knkvv")
@@ -61,6 +78,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_smui8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0gqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_814kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8asm")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_girnu")
 }, {
 "duration": 1.0,
@@ -107,7 +141,7 @@ script = ExtResource("1_3kvgn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_khvge")
-animation = &"Walk"
+animation = &"Jump"
 autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

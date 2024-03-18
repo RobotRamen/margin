@@ -9,6 +9,10 @@ var wasd_input = Vector2()
 @export var controlled_by_1 = false
 @export var is_single_player = true
 @export var is_keyboard = true
+
+var jumped = false
+var cayote = true
+
 var jump_b
 var shoot_b
 var restore_b
@@ -62,20 +66,28 @@ func _ready():
 	set_controls()
 
 func _physics_process(delta):
-	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
-	#if is_on_floor() and animated_sprite_2d.animation == "Jump":
-		#animated_sprite_2d.play("Idle")
-	if !is_on_floor() and jump_timer.is_stopped():
+		
+	if !is_on_floor() and jump_timer.is_stopped() and !jumped and cayote:
+		cayote = false
 		jump_timer.start()
-
+	
+	if is_on_floor():
+		cayote = true
+	
+	if is_on_floor() and jumped:
+		jumped = false
+	
 	# Handle Jump.
-	if !(is_single_player and controlled_by_1) and Input.is_action_just_pressed(jump_b) and (is_on_floor() or !jump_timer.is_stopped()):
+	if !(is_single_player and controlled_by_1) and Input.is_action_just_pressed(jump_b) and (is_on_floor() or !jump_timer.is_stopped()) and !jumped:
 		velocity.y = JUMP_VELOCITY
+		animated_sprite_2d.stop()
 		animated_sprite_2d.play("Jump")
-		print("jump")
+		if controlled_by_0: 
+			print("jump")
+		jumped = true
 		
 	if Input.is_action_just_pressed(restore_b):
 		restore()
@@ -102,12 +114,14 @@ func _physics_process(delta):
 	elif look_direction.x > 0:
 		animated_sprite_2d.flip_h = false
 	
-	if direction != 0 and is_on_floor():
+	if direction != 0 and is_on_floor() and !jumped:
 		animated_sprite_2d.play("Walk")
-		print("walking")
-	elif is_on_floor():
+		if controlled_by_0: 
+			print("walking")
+	elif is_on_floor()  and !jumped:
 		animated_sprite_2d.play("Idle")
-		print("idle")
+		if controlled_by_0: 
+			print("idle")
 	
 	move_and_slide()
 	
