@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmcelh5sklg2g"]
+[gd_scene load_steps=15 format=3 uid="uid://cmcelh5sklg2g"]
 
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_3ullf"]
+[ext_resource type="Script" path="res://level_getting_the_hang_of_it.gd" id="1_76xhw"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_n5nd7"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_vr854"]
 [ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_bgtc8"]
@@ -29,6 +30,7 @@ size = Vector2(454, 153)
 size = Vector2(116.406, 158.563)
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_76xhw")
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_3ullf")]
 position = Vector2(83, 994)

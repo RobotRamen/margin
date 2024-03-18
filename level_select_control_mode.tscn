@@ -169,11 +169,15 @@ shape = SubResource("RectangleShape2D_u85vy")
 position = Vector2(980, 153)
 shape = SubResource("RectangleShape2D_gc3w4")
 
+[connection signal="focus_entered" from="control select menu/Node2D/1P+K button" to="control select menu/Node2D/1P+K button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="control select menu/Node2D/1P+K button" to="control select menu/Node2D/1P+K button" method="_on_mouse_entered"]
 [connection signal="pressed" from="control select menu/Node2D/1P+K button" to="control select menu" method="_on_pk_button_pressed"]
+[connection signal="focus_entered" from="control select menu/Node2D/1P+C button" to="control select menu/Node2D/1P+C button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="control select menu/Node2D/1P+C button" to="control select menu/Node2D/1P+C button" method="_on_mouse_entered"]
 [connection signal="pressed" from="control select menu/Node2D/1P+C button" to="control select menu" method="_on_pc_button_pressed"]
+[connection signal="focus_entered" from="control select menu/Node2D/2P+K button" to="control select menu/Node2D/2P+K button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="control select menu/Node2D/2P+K button" to="control select menu/Node2D/2P+K button" method="_on_mouse_entered"]
 [connection signal="pressed" from="control select menu/Node2D/2P+K button" to="control select menu" method="_on_2pk_button_pressed"]
+[connection signal="focus_entered" from="control select menu/Node2D/2P+C button" to="control select menu/Node2D/2P+C button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="control select menu/Node2D/2P+C button" to="control select menu/Node2D/2P+C button" method="_on_mouse_entered"]
 [connection signal="pressed" from="control select menu/Node2D/2P+C button" to="control select menu" method="_on_2pc_button_pressed"]

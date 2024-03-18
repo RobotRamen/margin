@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eyktl28k24xq"
+path="res://.godot/imported/finish-lvl.wav-bc2f371aa6d83ceb452d7917c71e286d.sample"
+
+[deps]
+
+source_file="res://sounds and music/finish-lvl.wav"
+dest_files=["res://.godot/imported/finish-lvl.wav-bc2f371aa6d83ceb452d7917c71e286d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl4uv70vy3d6r"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_m88jp"]
+[ext_resource type="Theme" uid="uid://basjy2a0xiwrl" path="res://theme/Menu Theme.tres" id="2_x6a4o"]
+[ext_resource type="Script" path="res://Main menu button.gd" id="3_jhl05"]
+[ext_resource type="Script" path="res://Restart button.gd" id="4_vjt0t"]
+
+[node name="Pause menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m88jp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.556863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 30
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -108.0
+offset_right = 263.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Restart button" type="Button" parent="VBoxContainer"]
+z_index = 6
+z_as_relative = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_x6a4o")
+text = "Restart level"
+script = ExtResource("4_vjt0t")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Restart button"]
+z_index = 5
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Main menu button" type="Button" parent="VBoxContainer"]
+z_index = 6
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_x6a4o")
+text = "Main menu"
+script = ExtResource("3_jhl05")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Main menu button"]
+z_index = 5
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="focus_entered" from="VBoxContainer/Restart button" to="VBoxContainer/Restart button" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Restart button" to="VBoxContainer/Restart button" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Restart button" to="." method="_on_restart_button_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Main menu button" to="VBoxContainer/Main menu button" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Main menu button" to="VBoxContainer/Main menu button" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Main menu button" to="." method="_on_main_menu_button_pressed"]

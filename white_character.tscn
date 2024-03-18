@@ -1,10 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://igk0gdcmonds"]
+[gd_scene load_steps=28 format=3 uid="uid://igk0gdcmonds"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_3kvgn"]
 [ext_resource type="Texture2D" uid="uid://ds0mqmjlrnu0" path="res://sprites/Bouba_walk_sprite_sheet_v1.png" id="2_d1keo"]
 [ext_resource type="Texture2D" uid="uid://wwb28fkns5fu" path="res://sprites/bouba walk v2.png" id="3_knkvv"]
 [ext_resource type="Texture2D" uid="uid://cat057k4jojij" path="res://sprites/bouba jump.png" id="3_viibk"]
 [ext_resource type="Texture2D" uid="uid://bnwl4xoc5xpti" path="res://sprites/white_ret.png" id="4_cgyy6"]
+[ext_resource type="AudioStream" uid="uid://vr4iq33jjqex" path="res://sounds and music/bouba-shoot.wav" id="6_ia28f"]
+[ext_resource type="AudioStream" uid="uid://68nuia5sem6" path="res://sounds and music/jump-1.wav" id="7_nsxv5"]
+[ext_resource type="AudioStream" uid="uid://b7d07cmnxb1l" path="res://sounds and music/bouba-recall-start.wav" id="8_tj7gb"]
+[ext_resource type="AudioStream" uid="uid://b6u034xlfjyyw" path="res://sounds and music/bouba-recall-end.wav" id="9_cmj6m"]
+[ext_resource type="AudioStream" uid="uid://cfp6gm3nxyhmm" path="res://sounds and music/switch-char.wav" id="10_q1ut7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpek4"]
 atlas = ExtResource("2_d1keo")
@@ -155,20 +160,33 @@ offset = Vector2(30, 0)
 [node name="bullet spawn" type="Node2D" parent="gun"]
 position = Vector2(23, 0)
 
+[node name="RayCast2D" type="RayCast2D" parent="gun"]
+target_position = Vector2(210, 0)
+
 [node name="reticle" type="Sprite2D" parent="gun"]
 position = Vector2(211, 0)
 texture = ExtResource("4_cgyy6")
 
 [node name="shoot sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ia28f")
+volume_db = -8.0
 
 [node name="jump sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nsxv5")
+volume_db = -20.0
 
 [node name="recall sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tj7gb")
+volume_db = -8.0
 
 [node name="recall pickup sound" type="AudioStreamPlayer" parent="."]
-max_polyphony = 100
+stream = ExtResource("9_cmj6m")
+volume_db = -12.0
+max_polyphony = 10
 
 [node name="switch sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_q1ut7")
+volume_db = -8.0
 max_polyphony = 100
 
 [node name="jump timer" type="Timer" parent="."]

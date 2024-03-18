@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ifcwoqitdrfq"]
+[gd_scene load_steps=30 format=3 uid="uid://ifcwoqitdrfq"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_ua88i"]
 [ext_resource type="PackedScene" uid="uid://c27uvkw2iydq7" path="res://black_restore.tscn" id="2_chcwf"]
@@ -6,7 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dyfpcurwuqi8b" path="res://sprites/kiki_walk_sprite_sheet_v1.png" id="4_hhjog"]
 [ext_resource type="Texture2D" uid="uid://c2h8mx7ljaxbg" path="res://sprites/kiki walk v2.png" id="5_01mhd"]
 [ext_resource type="Texture2D" uid="uid://4ut3auh1u6rv" path="res://sprites/kiki jump.png" id="5_7w3n5"]
+[ext_resource type="AudioStream" uid="uid://dvn4d0xj1kxru" path="res://sounds and music/kiki-shoot.wav" id="8_nk1wt"]
 [ext_resource type="Texture2D" uid="uid://c5wdk522b2e20" path="res://sprites/black_ret.png" id="8_xf0by"]
+[ext_resource type="AudioStream" uid="uid://68nuia5sem6" path="res://sounds and music/jump-1.wav" id="9_2j8b2"]
+[ext_resource type="AudioStream" uid="uid://bk6ty27bn8ig5" path="res://sounds and music/kiki-recall-start.wav" id="10_nkbs6"]
+[ext_resource type="AudioStream" uid="uid://dl8n745voe0pd" path="res://sounds and music/kiki-recall-end.wav" id="11_dl31a"]
+[ext_resource type="AudioStream" uid="uid://cfp6gm3nxyhmm" path="res://sounds and music/switch-char.wav" id="12_rueev"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3cao"]
 atlas = ExtResource("4_hhjog")
@@ -164,19 +169,34 @@ offset = Vector2(30, 0)
 [node name="bullet spawn" type="Node2D" parent="gun"]
 position = Vector2(23, 0)
 
+[node name="RayCast2D" type="RayCast2D" parent="gun"]
+target_position = Vector2(210, 0)
+collision_mask = 2
+
 [node name="reticle" type="Sprite2D" parent="gun"]
 position = Vector2(211, 0)
 texture = ExtResource("8_xf0by")
 
 [node name="shoot sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nk1wt")
+volume_db = -8.0
 
 [node name="jump sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2j8b2")
+volume_db = -20.0
 
 [node name="recall sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_nkbs6")
+volume_db = -8.0
 
 [node name="recall pickup sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dl31a")
+volume_db = -12.0
+max_polyphony = 10
 
 [node name="switch sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rueev")
+volume_db = -8.0
 max_polyphony = 100
 
 [node name="ColorRect" type="ColorRect" parent="."]

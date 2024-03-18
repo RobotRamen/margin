@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://o272qli62jpi"]
+[gd_scene load_steps=5 format=3 uid="uid://o272qli62jpi"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_6pdj3"]
 [ext_resource type="Theme" uid="uid://basjy2a0xiwrl" path="res://theme/Menu Theme.tres" id="1_bejn0"]
+[ext_resource type="Script" path="res://back button.gd" id="3_1k2qy"]
+[ext_resource type="FontFile" uid="uid://cfn7lbm1g7p0t" path="res://theme/Fresco Stamp.ttf" id="3_wlwbr"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -27,15 +29,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 620.0
-offset_top = 215.0
-offset_right = 1008.0
-offset_bottom = 856.0
+offset_left = 405.0
+offset_top = 242.0
+offset_right = 793.0
+offset_bottom = 883.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 focus_mode = 2
 theme = ExtResource("1_bejn0")
+theme_override_fonts/font = ExtResource("3_wlwbr")
 text = "Game Design:
 Nicole Dingle
 Brendan Fallon
@@ -45,13 +48,65 @@ Game Development:
 Hani Dawood
 Brendan Fallon
 
-Music and sounds:
-Nicole Dingle
-
-Sprites and art:
+Music and Sound:
 Nicole Dingle"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Credits2" type="Label" parent="."]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 642.0
+offset_top = 244.0
+offset_right = 1030.0
+offset_bottom = 885.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+focus_mode = 2
+theme = ExtResource("1_bejn0")
+theme_override_fonts/font = ExtResource("3_wlwbr")
+text = "Art Design:
+Nicole Dingle
+
+Play Testers:
+Liam Flannigan
+Brendan Fallon"
+horizontal_alignment = 1
+
+[node name="Credits3" type="Label" parent="."]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 991.0
+offset_top = 252.0
+offset_right = 1206.0
+offset_bottom = 753.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+focus_mode = 2
+theme = ExtResource("1_bejn0")
+theme_override_fonts/font = ExtResource("3_wlwbr")
+theme_override_font_sizes/font_size = 20
+text = "Main menu music: \"Mess\" by Fupi. Available for use under the CC0 1.0 license at OpenGameArt.org. 
+
+Level music:
+
+\"Monkey Island Band\" by Eric Matyas (Soundimage.org). Available for use under the CC BY 4.0 license at OpenGameArt.org.
+
+\"Safety Tribe\" by Fupi. Available for use under the CC0 1.0 license at OpenGameArt.org. 
+
+\"Safety\" by Fupi. Available for use under the CC0 1.0 license at OpenGameArt.org. "
+autowrap_mode = 2
 
 [node name="back button" type="Button" parent="."]
 z_index = 3
@@ -61,14 +116,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1161.0
-offset_top = 805.0
-offset_right = 1222.0
-offset_bottom = 839.0
+offset_left = 1253.0
+offset_top = 828.0
+offset_right = 1314.0
+offset_bottom = 862.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_bejn0")
 text = "back
 "
+script = ExtResource("3_1k2qy")
 
+[connection signal="focus_entered" from="back button" to="back button" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="back button" to="back button" method="_on_mouse_entered"]
 [connection signal="pressed" from="back button" to="." method="_on_back_button_pressed"]

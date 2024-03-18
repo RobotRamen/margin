@@ -85,8 +85,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.stop()
 		animated_sprite_2d.play("Jump")
-		if controlled_by_0: 
-			print("jump")
+		jump_sound.play()
 		jumped = true
 		
 	if Input.is_action_just_pressed(restore_b):
@@ -105,6 +104,10 @@ func _physics_process(delta):
 	
 	if look_direction.length() >= 0.1:
 		gun.look_at(gun.global_position + look_direction)
+		if($gun/RayCast2D.is_colliding()):
+			$gun/reticle.global_position = $gun/RayCast2D.get_collision_point()
+		else:
+			$gun/reticle.position = $gun/RayCast2D.target_position
 	
 	if Input.is_action_just_pressed(shoot_b):
 		fire(gun.global_position + 600 * Vector2.from_angle(gun.rotation))
@@ -116,12 +119,13 @@ func _physics_process(delta):
 	
 	if direction != 0 and is_on_floor() and !jumped:
 		animated_sprite_2d.play("Walk")
-		if controlled_by_0: 
-			print("walking")
 	elif is_on_floor()  and !jumped:
 		animated_sprite_2d.play("Idle")
-		if controlled_by_0: 
-			print("idle")
+			
+	if($gun/RayCast2D.is_colliding()):
+		$gun/reticle.global_position = $gun/RayCast2D.get_collision_point()
+	else:
+		$gun/reticle.position = $gun/RayCast2D.target_position
 	
 	move_and_slide()
 	
@@ -131,6 +135,10 @@ func _input(event):
 			fire(event.position)
 	elif event is InputEventMouseMotion and controlled_by_0 and is_keyboard:
 		gun.look_at(event.position)
+		if($gun/RayCast2D.is_colliding()):
+			$gun/reticle.global_position = $gun/RayCast2D.get_collision_point()
+		else:
+			$gun/reticle.position = $gun/RayCast2D.target_position
 		if event.position.x - global_position.x < 0:
 			animated_sprite_2d.flip_h = true
 		else:

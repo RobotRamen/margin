@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfp6gm3nxyhmm"
+path="res://.godot/imported/switch-char.wav-d65304fc49b0da441f6cfc18b0171e3d.sample"
+
+[deps]
+
+source_file="res://sounds and music/switch-char.wav"
+dest_files=["res://.godot/imported/switch-char.wav-d65304fc49b0da441f6cfc18b0171e3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

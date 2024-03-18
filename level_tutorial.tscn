@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dprm6hyb6k4yf"]
+[gd_scene load_steps=11 format=3 uid="uid://dprm6hyb6k4yf"]
 
+[ext_resource type="Script" path="res://level_tutorial.gd" id="1_4fixb"]
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_hapq1"]
+[ext_resource type="FontFile" uid="uid://cfn7lbm1g7p0t" path="res://theme/Fresco Stamp.ttf" id="1_hnwgd"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_upa5v"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_0drcn"]
 [ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="4_471fe"]
@@ -14,6 +16,7 @@ size = Vector2(540, 425)
 size = Vector2(458, 47.5)
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_4fixb")
 
 [node name="Text" type="Node" parent="."]
 
@@ -36,32 +39,34 @@ offset_bottom = 274.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_hnwgd")
 theme_override_font_sizes/normal_font_size = 48
 theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
-text = "[b]Shoot[/b] colour &
-[b]Resize[/b] to help
-your friend exit!"
+text = "SHOOT colour &
+RESIZE to help
+your friend exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="& Bouba" type="RichTextLabel" parent="Text"]
 z_index = 2
 anchors_preset = -1
-anchor_right = 0.00729167
-anchor_bottom = 0.0175926
-offset_left = 1172.0
-offset_top = 525.0
-offset_right = 1364.0
-offset_bottom = 622.0
+anchor_right = 0.05
+anchor_bottom = 0.0675926
+offset_left = 1123.0
+offset_top = 468.0
+offset_right = 1315.0
+offset_bottom = 565.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
+theme_override_fonts/normal_font = ExtResource("1_hnwgd")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "[b]Recall[/b] to
+text = "RECALL to
 reload colour
-& resize"
+& resize ( Q or LT )"
 metadata/_edit_use_anchors_ = true
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_hapq1")]

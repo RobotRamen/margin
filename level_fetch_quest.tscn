@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://hpkiewx83nq2"]
+[gd_scene load_steps=9 format=3 uid="uid://hpkiewx83nq2"]
 
+[ext_resource type="Script" path="res://level_fetch_quest.gd" id="1_g27fg"]
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_glpbw"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_kj0ud"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_8dslt"]
@@ -11,6 +12,7 @@
 size = Vector2(226, 280)
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_g27fg")
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_glpbw")]
 position = Vector2(1615, 400)

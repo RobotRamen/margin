@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fffyvhs1h6l0"
+path="res://.godot/imported/level-3-and-4.ogg-d409447c140912c3affc661e77688c2b.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds and music/level-3-and-4.ogg"
+dest_files=["res://.godot/imported/level-3-and-4.ogg-d409447c140912c3affc661e77688c2b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

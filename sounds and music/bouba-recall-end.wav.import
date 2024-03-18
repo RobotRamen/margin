@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6u034xlfjyyw"
+path="res://.godot/imported/bouba-recall-end.wav-49e3fad35bc3d7924df6b15097ee86ca.sample"
+
+[deps]
+
+source_file="res://sounds and music/bouba-recall-end.wav"
+dest_files=["res://.godot/imported/bouba-recall-end.wav-49e3fad35bc3d7924df6b15097ee86ca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

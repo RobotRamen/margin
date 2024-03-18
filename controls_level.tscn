@@ -29,11 +29,11 @@ position = Vector2(1897, 523)
 shape = SubResource("RectangleShape2D_pnm2i")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="black_start"]
-position = Vector2(971.5, 1065)
+position = Vector2(971.5, 1157)
 shape = SubResource("RectangleShape2D_u85vy")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="black_start"]
-position = Vector2(965, -89)
+position = Vector2(965, -145)
 shape = SubResource("RectangleShape2D_gc3w4")
 
 [node name="Controls" parent="." instance=ExtResource("2_5tkre")]

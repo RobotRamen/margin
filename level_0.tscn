@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjcttugw0uh2p"]
+[gd_scene load_steps=10 format=3 uid="uid://cjcttugw0uh2p"]
 
+[ext_resource type="FontFile" uid="uid://cfn7lbm1g7p0t" path="res://theme/Fresco Stamp.ttf" id="1_c51ke"]
 [ext_resource type="PackedScene" uid="uid://u3n1wf876647" path="res://spawner.tscn" id="1_tg6qm"]
 [ext_resource type="PackedScene" uid="uid://igk0gdcmonds" path="res://white_character.tscn" id="2_60ehv"]
 [ext_resource type="PackedScene" uid="uid://ifcwoqitdrfq" path="res://black_character.tscn" id="3_js0ed"]
@@ -26,15 +27,21 @@ offset_bottom = 521.0
 
 [node name="KiKi shoots black" type="RichTextLabel" parent="Text"]
 z_index = 2
+anchors_preset = -1
+anchor_left = -0.00416667
+anchor_right = -0.00416667
+anchor_bottom = 0.075
 offset_left = 214.0
 offset_top = 96.0
 offset_right = 971.0
 offset_bottom = 221.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_c51ke")
+theme_override_fonts/bold_font = ExtResource("1_c51ke")
 theme_override_font_sizes/normal_font_size = 72
 theme_override_font_sizes/bold_font_size = 72
 bbcode_enabled = true
-text = "[b]KiKi[/b] shoots black"
+text = "[b]Kiki[/b] shoots black"
 metadata/_edit_use_anchors_ = true
 
 [node name="Bouba shoots white" type="RichTextLabel" parent="Text"]
@@ -44,10 +51,30 @@ offset_top = 591.0
 offset_right = 1004.0
 offset_bottom = 716.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_c51ke")
+theme_override_fonts/bold_font = ExtResource("1_c51ke")
 theme_override_font_sizes/normal_font_size = 72
 theme_override_font_sizes/bold_font_size = 72
 bbcode_enabled = true
 text = "[b]Bouba[/b] shoots white"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bouba shoots white2" type="RichTextLabel" parent="Text"]
+z_index = 2
+anchors_preset = -1
+anchor_left = -0.192188
+anchor_right = -0.192188
+offset_left = 1400.0
+offset_top = 900.0
+offset_right = 2201.0
+offset_bottom = 1025.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_c51ke")
+theme_override_fonts/bold_font = ExtResource("1_c51ke")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "( [b]RMB[/b] or [b]LT[/b] )"
 metadata/_edit_use_anchors_ = true
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_tg6qm")]

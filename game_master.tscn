@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://0hngokke8r1v"]
+[gd_scene load_steps=21 format=3 uid="uid://0hngokke8r1v"]
 
 [ext_resource type="Script" path="res://game_master.gd" id="1_xp3r1"]
 [ext_resource type="PackedScene" uid="uid://din18da3xggj" path="res://level_menu.tscn" id="2_4o8qf"]
@@ -12,18 +12,53 @@
 [ext_resource type="PackedScene" uid="uid://drrw6qxqri0ov" path="res://level_stepping_stones.tscn" id="5_lamal"]
 [ext_resource type="PackedScene" uid="uid://s8kcu3a61lxf" path="res://level_END.tscn" id="5_scnkc"]
 [ext_resource type="PackedScene" uid="uid://ciyw0olscs3t6" path="res://level_select_control_mode.tscn" id="5_u8m2t"]
+[ext_resource type="AudioStream" uid="uid://ckwde61oi7fxs" path="res://sounds and music/select-menu.wav" id="13_dtjqt"]
+[ext_resource type="AudioStream" uid="uid://b8fo6p6o684n4" path="res://sounds and music/level-1-and-2.mp3" id="13_fclr4"]
+[ext_resource type="AudioStream" uid="uid://dppw5g1hcxuv6" path="res://sounds and music/main-menu.ogg" id="13_xr3s0"]
+[ext_resource type="AudioStream" uid="uid://6ltvu5tbn45u" path="res://sounds and music/scroll-menu.wav" id="14_aek3c"]
+[ext_resource type="AudioStream" uid="uid://fffyvhs1h6l0" path="res://sounds and music/level-3-and-4.ogg" id="14_valns"]
+[ext_resource type="AudioStream" uid="uid://bdycfar8tx74b" path="res://sounds and music/level-5-and-6.ogg" id="15_2iovg"]
+[ext_resource type="AudioStream" uid="uid://eyktl28k24xq" path="res://sounds and music/finish-lvl.wav" id="19_t0isj"]
+[ext_resource type="PackedScene" uid="uid://dl4uv70vy3d6r" path="res://pause_menu.tscn" id="20_u2ql4"]
 
 [node name="game master" type="Node"]
 script = ExtResource("1_xp3r1")
 levels = Array[PackedScene]([ExtResource("2_4o8qf"), ExtResource("3_wb6jm"), ExtResource("4_sv0uk"), ExtResource("5_u8m2t"), ExtResource("2_i1kw2"), ExtResource("2_mj0lf"), ExtResource("3_t6p1j"), ExtResource("4_efjal"), ExtResource("5_lamal"), ExtResource("5_1w04x"), ExtResource("5_scnkc")])
 
 [node name="game music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_fclr4")
+volume_db = -4.0
+
+[node name="game music 2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_valns")
+volume_db = -4.0
+
+[node name="game music 3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_2iovg")
+volume_db = -4.0
 
 [node name="menu music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_xr3s0")
+volume_db = -4.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
 autostart = true
+
+[node name="select sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_dtjqt")
+volume_db = -10.0
+
+[node name="hover sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_aek3c")
+volume_db = -20.0
+
+[node name="level end sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_t0isj")
+volume_db = -20.0
+
+[node name="Pause menu" parent="." instance=ExtResource("20_u2ql4")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

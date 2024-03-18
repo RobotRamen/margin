@@ -4,6 +4,8 @@ extends Node2D
 
 var pixel_density = 10
 
+var is_animating = false
+
 # The thread will start here.
 func _ready():
 	for i in 1820/pixel_density:
@@ -21,7 +23,8 @@ func _ready():
 				new_pixel.set_meta("colour", 1)
 
 
-#func _on_timer_timeout():
-#	for pix in get_children():
-#		if pix is Node2D:
-#			pix.rotation += 0.1
+func _on_timer_timeout():
+	if is_animating:
+		for pix in get_children():
+			if pix is Node2D:
+				pix.rotation += 0.05

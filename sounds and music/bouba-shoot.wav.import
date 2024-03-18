@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vr4iq33jjqex"
+path="res://.godot/imported/bouba-shoot.wav-fe7ecbd318731a3d1cdf53638d5bfe35.sample"
+
+[deps]
+
+source_file="res://sounds and music/bouba-shoot.wav"
+dest_files=["res://.godot/imported/bouba-shoot.wav-fe7ecbd318731a3d1cdf53638d5bfe35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
