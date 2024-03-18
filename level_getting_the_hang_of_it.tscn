@@ -20,14 +20,14 @@ size = Vector2(428.5, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxrx6"]
 size = Vector2(83.5, 365)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqffi"]
-size = Vector2(116.219, 770)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iuna"]
-size = Vector2(454, 153)
+size = Vector2(406, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqffi"]
+size = Vector2(116.219, 708.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwa7k"]
-size = Vector2(116.406, 158.563)
+size = Vector2(100, 131.562)
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_76xhw")
@@ -82,40 +82,40 @@ shape = SubResource("RectangleShape2D_ai0ib")
 position = Vector2(500.25, 335)
 shape = SubResource("RectangleShape2D_bxrx6")
 
-[node name="Wall2" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1100, 539.125)
-shape = SubResource("RectangleShape2D_iqffi")
-
 [node name="Wall3" type="CollisionShape2D" parent="black_start"]
-position = Vector2(980, 1001.5)
+position = Vector2(956, 970)
 shape = SubResource("RectangleShape2D_6iuna")
 
+[node name="Wall2" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1100, 508.563)
+shape = SubResource("RectangleShape2D_iqffi")
+
 [node name="Wall4" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1357, 542)
+position = Vector2(1355, 507)
 shape = SubResource("RectangleShape2D_iqffi")
 
 [node name="Wall5" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1599, 542)
+position = Vector2(1597, 507)
 shape = SubResource("RectangleShape2D_iqffi")
 
 [node name="Wall6" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1828, 542)
+position = Vector2(1826, 507)
 shape = SubResource("RectangleShape2D_iqffi")
 
 [node name="Box1" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1477.8, 1001.28)
+position = Vector2(1480, 1015)
 shape = SubResource("RectangleShape2D_cwa7k")
 
 [node name="Box2" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1719.84, 1001)
+position = Vector2(1720, 1020.22)
 shape = SubResource("RectangleShape2D_cwa7k")
 
 [node name="White Exit" parent="." instance=ExtResource("5_aok0o")]
 z_index = 2
-position = Vector2(1831, 881)
+position = Vector2(1836, 813)
 rotation = 3.14159
 
 [node name="Black Exit" parent="." instance=ExtResource("6_82gvj")]
 z_index = 2
-position = Vector2(1832, 980)
+position = Vector2(1837, 912)
 rotation = 3.14159
