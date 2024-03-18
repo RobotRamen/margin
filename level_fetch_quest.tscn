@@ -8,16 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://drtn8scom3w20" path="res://black_exit.tscn" id="6_w7bt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ymvw"]
-size = Vector2(154.25, 157.75)
+size = Vector2(226, 280)
 
 [node name="level_1" type="Node2D"]
 
 [node name="whiteSpawner" parent="." instance=ExtResource("1_glpbw")]
-position = Vector2(1685, 527)
+position = Vector2(1615, 400)
 scene = ExtResource("2_kj0ud")
 
 [node name="blackSpawner" parent="." instance=ExtResource("1_glpbw")]
-position = Vector2(223, 707)
+position = Vector2(344, 696)
 scene = ExtResource("3_8dslt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -28,57 +28,41 @@ position = Vector2(0, -40)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="black_start"]
-position = Vector2(200, 500)
+position = Vector2(321, 364)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="black_start"]
-position = Vector2(500, 500)
+position = Vector2(767, 364)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
-position = Vector2(800, 500)
+position = Vector2(1205, 362)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1100, 500)
-shape = SubResource("RectangleShape2D_3ymvw")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1400, 500)
-shape = SubResource("RectangleShape2D_3ymvw")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1700, 500)
+position = Vector2(1615, 381)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="black_start"]
-position = Vector2(200, 850)
+position = Vector2(321, 839)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="black_start"]
-position = Vector2(500, 850)
+position = Vector2(767, 839)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="black_start"]
-position = Vector2(800, 850)
+position = Vector2(1205, 837)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1100, 850)
-shape = SubResource("RectangleShape2D_3ymvw")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1400, 850)
-shape = SubResource("RectangleShape2D_3ymvw")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="black_start"]
-position = Vector2(1700, 850)
+position = Vector2(1615, 856)
 shape = SubResource("RectangleShape2D_3ymvw")
 
 [node name="White Exit" parent="." instance=ExtResource("5_7s558")]
 z_index = 2
-position = Vector2(178, 776)
+position = Vector2(299, 765)
 
 [node name="Black Exit" parent="." instance=ExtResource("6_w7bt5")]
 z_index = 2
-position = Vector2(177, 680)
+position = Vector2(302, 584)

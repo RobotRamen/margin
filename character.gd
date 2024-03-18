@@ -8,10 +8,17 @@ var wasd_input = Vector2()
 @export var controlled_by_0 = true
 @export var controlled_by_1 = false
 @export var is_single_player = true
+@export var is_keyboard = true
 var jump_b
 var shoot_b
 var restore_b
 var switch_b = "switch"
+var left
+var right
+var look_left
+var look_right
+var look_up
+var look_down
 
 var bullet_impulse = 2000
 
@@ -50,8 +57,9 @@ var tween : Tween
 
 
 func _ready():
+	is_single_player = GameMaster.is_single_player
+	is_keyboard = GameMaster.is_keyboard
 	set_controls()
-		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -64,8 +72,10 @@ func _physics_process(delta):
 		jump_timer.start()
 
 	# Handle Jump.
-	if Input.is_action_just_pressed(jump_b) and (is_on_floor() or !jump_timer.is_stopped()):
+	if !(is_single_player and controlled_by_1) and Input.is_action_just_pressed(jump_b) and (is_on_floor() or !jump_timer.is_stopped()):
 		velocity.y = JUMP_VELOCITY
+		animated_sprite_2d.play("Jump")
+		print("jump")
 		
 	if Input.is_action_just_pressed(restore_b):
 		restore()
@@ -87,25 +97,25 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(shoot_b):
 		fire(gun.global_position + 600 * Vector2.from_angle(gun.rotation))
 	
-	print(look_direction)
-	
 	if look_direction.x < 0:
 		animated_sprite_2d.flip_h = true
 	elif look_direction.x > 0:
 		animated_sprite_2d.flip_h = false
 	
-	if direction != 0:
+	if direction != 0 and is_on_floor():
 		animated_sprite_2d.play("Walk")
-	else:
+		print("walking")
+	elif is_on_floor():
 		animated_sprite_2d.play("Idle")
+		print("idle")
 	
 	move_and_slide()
 	
 func _input(event):
-	if event is InputEventMouseButton and controlled_by_0:
+	if event is InputEventMouseButton and controlled_by_0 and is_keyboard:
 		if event.pressed:
 			fire(event.position)
-	elif event is InputEventMouseMotion and controlled_by_0:
+	elif event is InputEventMouseMotion and controlled_by_0 and is_keyboard:
 		gun.look_at(event.position)
 		if event.position.x - global_position.x < 0:
 			animated_sprite_2d.flip_h = true
@@ -113,6 +123,8 @@ func _input(event):
 			animated_sprite_2d.flip_h = false
 
 func fire(mouse_position):
+	if is_single_player and controlled_by_1:
+		return
 	if scale - (size_increment/2)  <= min_size:
 		scale = min_size
 	else:
@@ -129,6 +141,8 @@ func add_pixel(pixel):
 		restore_pixels.append(pixel)
 		
 func restore():
+	if is_single_player and controlled_by_1:
+		return
 	var restores = 0
 	if colour == 1:
 		for pix in restore_pixels:
@@ -178,11 +192,12 @@ func on_restore_pickup():
 		
 
 func switch():
-	controlled_by_0 = !controlled_by_0
-	controlled_by_1 = !controlled_by_1
-	set_controls()
-	if controlled_by_0:
-		switch_sound.play()
+	if is_single_player:
+		controlled_by_0 = !controlled_by_0
+		controlled_by_1 = !controlled_by_1
+		set_controls()
+		if controlled_by_0:
+			switch_sound.play()
 
 func tween_to_size(target_size : Vector2):
 	if tween:
@@ -191,24 +206,89 @@ func tween_to_size(target_size : Vector2):
 	tween.tween_property(self, "scale", target_size, 1)
 
 func set_controls():
-	if is_single_player:
-		if controlled_by_0:
+	if is_single_player and controlled_by_1:
+		gun.visible = false
+	
+	
+	
+	if is_single_player and controlled_by_0:
+		gun.visible = true
+		if is_keyboard:
+			jump_b = "jump_k"
+			shoot_b = "shoot_k"
+			restore_b = "restore_k"
+			left = "left_k"
+			right = "right_k"
+			look_left = null
+			look_right = null
+			look_up = null
+			look_down = null
+		else:
 			jump_b = "jump_0"
 			shoot_b = "shoot_0"
-			switch_b = "switch_0"
+			restore_b = "restore_0"
+			left = "left_0"
+			right = "right_0"
+			look_left = "look_left_0"
+			look_right = "look_right_0"
+			look_up = "look_up_0"
+			look_down = "look_down_0"
+	else:
+		if controlled_by_0:
+			if is_keyboard:
+				jump_b = "jump_k"
+				shoot_b = "shoot_k"
+				restore_b = "restore_k"
+				left = "left_k"
+				right = "right_k"
+				look_left = null
+				look_right = null
+				look_up = null
+				look_down = null
+			else:
+				jump_b = "jump_0"
+				shoot_b = "shoot_0"
+				restore_b = "restore_0"
+				left = "left_0"
+				right = "right_0"
+				look_left = "look_left_0"
+				look_right = "look_right_0"
+				look_up = "look_up_0"
+				look_down = "look_down_0"
+		else:
+			if is_keyboard:
+				jump_b = "jump_0"
+				shoot_b = "shoot_0"
+				restore_b = "restore_0"
+				left = "left_0"
+				right = "right_0"
+				look_left = "look_left_0"
+				look_right = "look_right_0"
+				look_up = "look_up_0"
+				look_down = "look_down_0"
+			else:
+				jump_b = "jump_1"
+				shoot_b = "shoot_1"
+				restore_b = "restore_1"
+				left = "left_1"
+				right = "right_1"
+				look_left = "look_left_1"
+				look_right = "look_right_1"
+				look_up = "look_up_1"
+				look_down = "look_down_1"
 
 func set_direction():
-	if controlled_by_0:
-		direction = Input.get_axis("left_0", "right_0")
-	elif controlled_by_1:
-		direction = Input.get_axis("left_1", "right_1")
+	if is_single_player and controlled_by_1:
+		direction = 0
+	elif controlled_by_0 or controlled_by_1:
+		direction = Input.get_axis(left, right)
 	else:
 		direction = 0
 
 func set_look_direction():
-	if controlled_by_0:
-		look_direction = Input.get_vector("look_left_0", "look_right_0", "look_up_0", "look_down_0")
-	elif controlled_by_1:
-		look_direction = Input.get_vector("look_left_1", "look_right_1", "look_up_1", "look_down_1")
+	if is_single_player and controlled_by_1:
+		look_direction = Vector2(0,0)
+	if (controlled_by_0 or controlled_by_1) and !is_keyboard:
+		look_direction = Input.get_vector(look_left, look_right, look_up, look_down)
 	else:
 		look_direction = Vector2(0,0)

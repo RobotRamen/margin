@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=3 uid="uid://ciyw0olscs3t6"]
+
+[ext_resource type="Script" path="res://control_select_menu.gd" id="1_wwatx"]
+[ext_resource type="Texture2D" uid="uid://bngmpq1ojc2ka" path="res://sprites/title.png" id="2_0y0n3"]
+[ext_resource type="PackedScene" uid="uid://bxvj02pacs423" path="res://black_start.tscn" id="2_5ctq2"]
+[ext_resource type="Theme" uid="uid://basjy2a0xiwrl" path="res://theme/Menu Theme.tres" id="3_6w8hh"]
+[ext_resource type="Script" path="res://start button.gd" id="4_8l0at"]
+[ext_resource type="Script" path="res://controls button.gd" id="5_2wemx"]
+[ext_resource type="Script" path="res://credits button.gd" id="6_hmytv"]
+[ext_resource type="Script" path="res://exit button.gd" id="7_4gyhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnm2i"]
+size = Vector2(827, 1158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6d5"]
+size = Vector2(918, 43.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u85vy"]
+size = Vector2(2111, 307.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc3w4"]
+size = Vector2(1788, 515.688)
+
+[node name="level_menu" type="Node2D"]
+
+[node name="control select menu" type="CanvasLayer" parent="."]
+script = ExtResource("1_wwatx")
+
+[node name="ColorRect" type="ColorRect" parent="control select menu"]
+visible = false
+z_index = -2
+offset_right = 1939.0
+offset_bottom = 1086.0
+
+[node name="game logo" type="TextureRect" parent="control select menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -519.0
+offset_top = 121.0
+offset_right = 7224.0
+offset_bottom = 2092.0
+grow_horizontal = 2
+scale = Vector2(0.135, 0.135)
+size_flags_horizontal = 4
+texture = ExtResource("2_0y0n3")
+
+[node name="Node2D" type="Node2D" parent="control select menu"]
+
+[node name="1P+K button" type="Button" parent="control select menu/Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 791.0
+offset_top = 443.0
+offset_right = 1116.0
+offset_bottom = 488.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../2P+C button")
+focus_neighbor_bottom = NodePath("../1P+C button")
+focus_next = NodePath("../1P+C button")
+focus_previous = NodePath("../2P+C button")
+theme = ExtResource("3_6w8hh")
+text = "One Player (keyboard)"
+script = ExtResource("4_8l0at")
+
+[node name="1P+C button" type="Button" parent="control select menu/Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 778.0
+offset_top = 585.0
+offset_right = 1133.0
+offset_bottom = 630.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../1P+K button")
+focus_neighbor_bottom = NodePath("../2P+K button")
+focus_next = NodePath("../2P+K button")
+focus_previous = NodePath(".")
+theme = ExtResource("3_6w8hh")
+text = "One Player (controller)"
+script = ExtResource("5_2wemx")
+
+[node name="2P+K button" type="Button" parent="control select menu/Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 690.0
+offset_top = 712.0
+offset_right = 1223.0
+offset_bottom = 757.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../1P+C button")
+focus_neighbor_bottom = NodePath("../2P+C button")
+focus_next = NodePath("../2P+C button")
+focus_previous = NodePath("../1P+C button")
+theme = ExtResource("3_6w8hh")
+text = "two Player (Keyboard + COntroller)"
+script = ExtResource("6_hmytv")
+
+[node name="2P+C button" type="Button" parent="control select menu/Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 735.0
+offset_top = 843.0
+offset_right = 1178.0
+offset_bottom = 888.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../2P+K button")
+focus_neighbor_bottom = NodePath("../1P+K button")
+focus_next = NodePath("../1P+K button")
+focus_previous = NodePath("../2P+K button")
+theme = ExtResource("3_6w8hh")
+text = "Two player (two controllers)"
+script = ExtResource("7_4gyhk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="black_start" parent="." instance=ExtResource("2_5ctq2")]
+collision_layer = 0
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="black_start"]
+position = Vector2(213, 550.75)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="black_start"]
+position = Vector2(956, 797)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="black_start"]
+position = Vector2(955, 670)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="black_start"]
+position = Vector2(952, 540)
+shape = SubResource("RectangleShape2D_wn6d5")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="black_start"]
+position = Vector2(1716, 561)
+shape = SubResource("RectangleShape2D_pnm2i")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="black_start"]
+position = Vector2(959, 1065)
+shape = SubResource("RectangleShape2D_u85vy")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="black_start"]
+position = Vector2(980, 153)
+shape = SubResource("RectangleShape2D_gc3w4")
+
+[connection signal="mouse_entered" from="control select menu/Node2D/1P+K button" to="control select menu/Node2D/1P+K button" method="_on_mouse_entered"]
+[connection signal="pressed" from="control select menu/Node2D/1P+K button" to="control select menu" method="_on_pk_button_pressed"]
+[connection signal="mouse_entered" from="control select menu/Node2D/1P+C button" to="control select menu/Node2D/1P+C button" method="_on_mouse_entered"]
+[connection signal="pressed" from="control select menu/Node2D/1P+C button" to="control select menu" method="_on_pc_button_pressed"]
+[connection signal="mouse_entered" from="control select menu/Node2D/2P+K button" to="control select menu/Node2D/2P+K button" method="_on_mouse_entered"]
+[connection signal="pressed" from="control select menu/Node2D/2P+K button" to="control select menu" method="_on_2pk_button_pressed"]
+[connection signal="mouse_entered" from="control select menu/Node2D/2P+C button" to="control select menu/Node2D/2P+C button" method="_on_mouse_entered"]
+[connection signal="pressed" from="control select menu/Node2D/2P+C button" to="control select menu" method="_on_2pc_button_pressed"]

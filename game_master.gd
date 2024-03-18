@@ -10,6 +10,9 @@ var black_exit = false
 var current_level : Node
 var current_level_index : int = -1
 
+var is_keyboard
+var is_single_player
+
 func _ready():
 	menu_music.play()
 
